@@ -7,3 +7,17 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  width: 1280px;
+  max-width: 100%;
+  flex: 1;
+  margin: 0 auto;
+  background-color: red;
+}
