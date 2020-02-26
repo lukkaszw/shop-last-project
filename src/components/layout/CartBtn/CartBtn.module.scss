@@ -1,0 +1,28 @@
+.root {
+  font-size: 20px;
+  padding: 13px 10px 7px;
+  border: none;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: .2s;
+
+  &:hover {
+    background-color: #222;
+    box-shadow: 0 4px 0 #3e69f6;
+  }
+
+  &:focus {
+    outline: 1px transparent;
+  }
+
+  .count {
+    padding-right: 5px;
+    font-size: 18px;
+    color: rgba(255, 72, 0, 0.986);
+
+    &.notEmpty {
+      color: #adff2f;
+    }
+  }
+}

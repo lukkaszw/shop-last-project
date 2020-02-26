@@ -1,0 +1,20 @@
+.root {
+  
+  .navList {
+    list-style: none;
+
+    .navList__link {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 16px 12px 12px;
+      text-transform: uppercase;
+      transition: .2s;
+
+      &:hover, &.active {
+        box-shadow: 0 4px 0 #3e69f6;
+      }
+    }
+  }
+}
