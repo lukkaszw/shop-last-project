@@ -1,5 +1,104 @@
 .root {
-  background-color: black;
+  background-color: #111;
   text-align: center;
-  color: #fff;
+  color: #aaa;
+  padding: 20px;
+
+  .categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    h3 {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .category {
+      width: 250px;
+      margin: 10px 20px;
+      text-align: left;
+
+      &__item {
+        display: flex;
+        margin: 8px 0;
+      }
+      
+      .icon {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .newsletter {
+    display: flex;
+    margin: 10px 0;
+
+
+    &__input {
+      padding: 3px 5px;
+      font-size: 16px;
+      background-color: #333;
+      border: none;
+      color: #fff;
+      transition: .2s;
+
+      &:focus {
+        outline: 1px solid transparent;
+      }
+    }
+
+    &__btn {
+      font-size: 20px;
+      background-color: #ff4500;
+      color: #fff;
+      border: none;
+      height: 28px;
+      padding: 0 10px 0;
+      cursor: pointer;
+
+      &:focus {
+        outline: 1px solid transparent;
+      }
+
+      &:hover {
+        background-color: #dd2200;
+      }
+    }
+  }
+
+  .social {
+    display: flex;
+    height: 90px;
+    justify-content: space-around;
+    align-items: center;
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 50px;
+      max-width: 50px;
+      height: 50px;
+      font-size: 18px;
+      border-radius: 50%;
+      color: #fff;
+      background-color: #222;
+      transition: .2s;
+    }
+
+    &__twitter:hover {
+      background-color: #1DA1F2;
+    }
+
+    &__youtube:hover {
+      background-color: #c4302b;
+    }
+
+    &__facebook:hover {
+      background-color: #4267B2;
+    }
+  }
+
+
 }
