@@ -31,7 +31,7 @@ const products = [
   },
   {
     _id: '4',
-    title: 'Assasin Odyssey',
+    title: "Assasin's Creed: Odyssey",
     imageUrl: '/images/assasin-odyssey.jpg',
     photos: [],
     variant: 'box',
@@ -41,7 +41,7 @@ const products = [
   },
   {
     _id: '5',
-    title: 'Assasin Origin',
+    title: "Assasin's Creed: Origin",
     imageUrl: '/images/assasin-origin.jpg',
     photos: [],
     variant: 'box',
@@ -81,7 +81,7 @@ const products = [
   },
   {
     _id: '9',
-    title: 'Divinity Original Sin II',
+    title: 'Divinity II: Original Sin',
     imageUrl: '/images/divinity-os-2-de.jpg',
     photos: [],
     variant: 'key',
