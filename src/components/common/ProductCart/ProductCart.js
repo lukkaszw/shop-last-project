@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
 
 import styles from './ProductCart.module.scss';
 
@@ -17,7 +16,7 @@ const ProductCart = ({ _id, imageUrl, title, price, oldPrice }) => {
     const discountPercent = Math.ceil(((oldPrice - price)/oldPrice) * 100);
     percentageElement = (
       <span className={styles.percent}>
-        -{discountPercent} %
+        - {discountPercent}%
       </span>
     )
   }

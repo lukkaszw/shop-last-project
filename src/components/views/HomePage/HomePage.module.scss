@@ -1,0 +1,11 @@
+.root {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 20px;
+  color: #fff;
+
+  .product {
+    margin: 10px 0;
+  }
+}
