@@ -8,7 +8,20 @@ import {
 import getDiscountPercent from '../../../utils/getDiscountPercent';
 import AmountWidget from '../AmountWidget/AmountWidget';
 
-const Product  = ({ _id, chosenAmount, title, categories, imageUrl, gallery, variant, oldPrice, price, description  }) => {
+const Product  = ({ 
+  _id, chosenAmount, 
+  title, 
+  categories, 
+  imageUrl, 
+  gallery, 
+  variant, 
+  oldPrice, 
+  price, 
+  description, 
+  amount,
+  increaseAmount,
+  decreaseAmount,  
+}) => {
   let promotionEl= null;
   let oldPriceEl = null;
   if(oldPrice) {
@@ -63,14 +76,24 @@ const Product  = ({ _id, chosenAmount, title, categories, imageUrl, gallery, var
           </div>
         </div>
         <div className={styles.form}>
-            <AmountWidget 
-              value={chosenAmount}
-            />
+            {
+              amount > 0 ?
+              <AmountWidget 
+                value={chosenAmount}
+                maxAmount={amount}
+                increaseAction={increaseAmount}
+                decreaseAction={decreaseAmount}
+              />
+              :
+              <p className={styles.outOffStock}>Out of stock!</p>
+            }
+      
             <form 
               onSubmit={(e) => e.preventDefault()}
             >
               <button
                 className={styles.btn}
+                disabled={amount <= 0}
               >
                 Add to cart
               </button>
@@ -83,6 +106,7 @@ const Product  = ({ _id, chosenAmount, title, categories, imageUrl, gallery, var
 
 Product.propTypes = {
   _id: PropTypes.string,
+  amount: PropTypes.number,
   chosenAmount: PropTypes.number,
   title: PropTypes.string,
   categories: PropTypes.array,
@@ -92,6 +116,8 @@ Product.propTypes = {
   oldPrice: PropTypes.number,
   price: PropTypes.number,
   description: PropTypes.string,
+  increaseAmount: PropTypes.func,
+  decreaseAmount: PropTypes.func,
 }
  
 export default Product ;

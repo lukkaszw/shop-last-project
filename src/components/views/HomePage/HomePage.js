@@ -9,7 +9,6 @@ class HomePage extends Component {
 
   renderProducts = () => {
     const { products } = this.props;
-    console.log(products);
     if(products.length === 0) {
       return <h3>No products available! Please try again later!</h3>
     }

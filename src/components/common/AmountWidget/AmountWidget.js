@@ -2,14 +2,16 @@ import React from 'react';
 import clsx from 'clsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
 import styles from './AmountWidghet.module.scss';
 
-const AmountWidget = ({ value, dicreaseAction, increaseAction, maxAmount }) => {
+const AmountWidget = ({ value, decreaseAction, increaseAction, maxAmount }) => {
   return ( 
     <div className={styles.root}>
       <button
         className={clsx([styles.btn, styles.btn__decrease])}
+        onClick={decreaseAction}
         disabled={value === 1}
       >
         <FontAwesomeIcon icon={faMinus} />
@@ -20,6 +22,7 @@ const AmountWidget = ({ value, dicreaseAction, increaseAction, maxAmount }) => {
       </span>
       <button
         className={clsx([styles.btn, styles.btn__increase])}
+        onClick={increaseAction}
         disabled={value === maxAmount}
       >
         <FontAwesomeIcon icon={faPlus} />
@@ -27,5 +30,12 @@ const AmountWidget = ({ value, dicreaseAction, increaseAction, maxAmount }) => {
     </div>
    );
 }
+
+AmountWidget.propTypes = {
+  value: PropTypes.number,
+  decreaseAction: PropTypes.func,
+  increaseAction: PropTypes.func,
+  maxAmount: PropTypes.number,
+};
  
 export default AmountWidget;

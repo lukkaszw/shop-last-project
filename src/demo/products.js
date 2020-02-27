@@ -3,6 +3,7 @@ const products = [
     _id: '1',
     title: 'Age of empires II',
     categories: ['RTS', 'strategy'],
+    amount: 0,
     imageUrl: '/images/age2.jpg',
     gallery: [
       {
@@ -36,6 +37,7 @@ const products = [
     title: 'Anno 1800',
     categories: ['RTS', 'strategy'],
     producent: 'Infinity Ward',
+    amount: 10,
     imageUrl: '/images/anno-1800.jpg',
     gallery: [
       {
@@ -68,6 +70,7 @@ const products = [
     _id: '3',
     title: 'Anno 2205',
     categories: ['RTS', 'strategy'],
+    amount: 2,
     imageUrl: '/images/anno-2205.jpg',
     gallery: [
       {
@@ -100,6 +103,7 @@ const products = [
     _id: '4',
     title: "Assasin's Creed: Odyssey",
     categories: ['adventure', 'cRPG'],
+    amount: 15,
     imageUrl: '/images/assasin-odyssey.jpg',
     gallery: [
       {
@@ -132,6 +136,7 @@ const products = [
     _id: '5',
     title: "Assasin's Creed: Origin",
     categories: ['adventure', 'cRPG'],
+    amount: 7,
     imageUrl: '/images/assasin-origin.jpg',
     gallery: [
       {
@@ -164,6 +169,7 @@ const products = [
     _id: '6',
     title: 'Battlefield 1',
     categories: ['FPS', 'shooter'],
+    amount: 12,
     imageUrl: '/images/battlefield-1.jpg',
     gallery: [
       {
@@ -196,6 +202,7 @@ const products = [
     _id: '7',
     title: 'Battlefield V',
     categories: ['FPS', 'shooter'],
+    amount: 21,
     imageUrl: '/images/battlefield-V.jpg',
     gallery: [
       {
@@ -228,6 +235,7 @@ const products = [
     _id: '8',
     title: 'Call of Duty: Modern Warfare',
     categories: ['FPS', 'shooter'],
+    amount: 1,
     imageUrl: '/images/call-of-duty.jpg',
     gallery: [
       {
@@ -260,6 +268,7 @@ const products = [
     _id: '9',
     title: 'Divinity II: Original Sin',
     categories: ['cRPG', 'izometric'],
+    amount: 6,
     imageUrl: '/images/divinity-os-2-de.jpg',
     gallery: [
       {
@@ -292,6 +301,7 @@ const products = [
     _id: '10',
     title: 'Elex',
     categories: ['cRPG', 'adventure'],
+    amount: 7,
     imageUrl: '/images/elex.jpg',
     gallery: [
       {
@@ -324,6 +334,7 @@ const products = [
     _id: '11',
     title: 'F1 2019',
     categories: ['race', 'sport'],
+    amount: 6,
     imageUrl: '/images/f12019.jpg',
     gallery: [
       {
@@ -355,6 +366,7 @@ const products = [
   {
     _id: '12',
     title: 'Far Cry 5',
+    amount: 9,
     categories: ['FPS', 'shooter'],
     imageUrl: '/images/far-cry-5.jpg',
     gallery: [
@@ -388,6 +400,7 @@ const products = [
     _id: '13',
     title: 'Fifa 20',
     categories: ['sport'],
+    amount: 45,
     imageUrl: '/images/fifa20.jpg',
     gallery: [
       {
@@ -420,6 +433,7 @@ const products = [
     _id: '14',
     title: 'Football Manager 2020',
     categories: ['sport'],
+    amount: 8,
     imageUrl: '/images/fm2020.jpg',
     gallery: [
       {
@@ -452,6 +466,7 @@ const products = [
     _id: '15',
     title: 'Forza Street',
     categories: ['race', 'sport'],
+    amount: 4,
     imageUrl: '/images/forzaStreet.jpg',
     gallery: [
       {
@@ -484,6 +499,7 @@ const products = [
     _id: '16',
     title: 'Gears 5',
     categories: ['TPP', 'shooter'],
+    amount: 16,
     imageUrl: '/images/gears5.jpg',
     gallery: [
       {
@@ -516,6 +532,7 @@ const products = [
     _id: '17',
     title: 'Grid',
     categories: ['race', 'sport'],
+    amount: 2,
     imageUrl: '/images/grid.jpg',
     gallery: [
       {
@@ -548,6 +565,7 @@ const products = [
     _id: '18',
     title: 'Kingdom Come Deliverance',
     categories: ['cRPG'],
+    amount: 5,
     imageUrl: '/images/kingdomComeDel.jpg',
     gallery: [
       {
@@ -580,6 +598,7 @@ const products = [
     _id: '19',
     title: 'Moto GP 19',
     categories: ['race', 'sport'],
+    amount: 3,
     imageUrl: '/images/moto-gp-19.jpg',
     gallery: [
       {
@@ -612,6 +631,7 @@ const products = [
     _id: '20',
     title: 'Pro Evolution Soccer 2020',
     categories: ['sport'],
+    amount: 33,
     imageUrl: '/images/pes2020.jpg',
     gallery: [
       {
@@ -644,6 +664,7 @@ const products = [
     _id: '21',
     title: 'Street Fighter Champions Edition',
     categories: ['fight'],
+    amount: 5,
     imageUrl: '/images/street-fighter-ch-e.jpg',
     gallery: [
       {
@@ -676,6 +697,7 @@ const products = [
     _id: '22',
     title: 'Xpand Rally Extreme',
     categories: ['race', 'sport'],
+    amount: 12,
     imageUrl: '/images/xpand-rally-extreme.jpg',
     gallery: [
       {
