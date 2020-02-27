@@ -1,11 +1,15 @@
 .root {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding: 20px;
   color: #fff;
 
   .product {
     margin: 10px 0;
+  }
+
+  @media (max-width: 800px) {
+    justify-content: space-around;
   }
 }
