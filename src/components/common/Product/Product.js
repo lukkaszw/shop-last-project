@@ -5,8 +5,10 @@ import {
   getVersion,
   getCategory,
 } from '../../../utils/specification';
-import getDiscountPercent from '../../../utils/getDiscountPercent';
 import AmountWidget from '../AmountWidget/AmountWidget';
+import Gallery from '../Gallery/Gallery';
+
+import getDiscountPercent from '../../../utils/getDiscountPercent';
 
 const Product  = ({ 
   _id, chosenAmount, 
@@ -100,6 +102,9 @@ const Product  = ({
             </form>
         </div>
       </div>
+      <Gallery 
+        gallery={gallery}
+      />
     </article>
    );
 }

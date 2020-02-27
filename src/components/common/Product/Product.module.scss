@@ -1,10 +1,12 @@
 .root {
-  max-width: 680px;
   margin: 40px auto;
 
   .grid {
     display: flex;
     justify-content: space-around;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
     flex-wrap: wrap;
   }
 

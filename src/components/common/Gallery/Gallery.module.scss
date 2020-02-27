@@ -1,0 +1,51 @@
+.root {
+  margin: 60px 0;
+
+  .list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  .btn {
+    position: relative;
+    display: block;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    line-height: 0;
+    margin: 5px;
+    height: auto;
+    cursor: pointer;
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: #fff;
+      opacity: 0;
+      font-size: 30px;
+      transform: translate(-50%, -50%);
+      transition: .3s;
+    }
+
+    .photo {
+      transition: .3s;
+    }
+
+    &:focus {
+      outline: 1px solid transparent;
+    }
+
+    &:hover {
+      .photo {
+        opacity: .3;
+      }
+
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+}
