@@ -2,6 +2,7 @@ const products = [
   {
     _id: '1',
     title: 'Age of empires II',
+    categories: ['RTS', 'strategy'],
     imageUrl: '/images/age2.jpg',
     gallery: [
       {
@@ -33,6 +34,7 @@ const products = [
   {
     _id: '2',
     title: 'Anno 1800',
+    categories: ['RTS', 'strategy'],
     imageUrl: '/images/anno-1800.jpg',
     gallery: [
       {
@@ -64,6 +66,7 @@ const products = [
   {
     _id: '3',
     title: 'Anno 2205',
+    categories: ['RTS', 'strategy'],
     imageUrl: '/images/anno-2205.jpg',
     gallery: [
       {
@@ -95,6 +98,7 @@ const products = [
   {
     _id: '4',
     title: "Assasin's Creed: Odyssey",
+    categories: ['adventure', 'cRPG'],
     imageUrl: '/images/assasin-odyssey.jpg',
     gallery: [
       {
@@ -126,6 +130,7 @@ const products = [
   {
     _id: '5',
     title: "Assasin's Creed: Origin",
+    categories: ['adventure', 'cRPG'],
     imageUrl: '/images/assasin-origin.jpg',
     gallery: [
       {
@@ -157,6 +162,7 @@ const products = [
   {
     _id: '6',
     title: 'Battlefield 1',
+    categories: ['FPS', 'shooter'],
     imageUrl: '/images/battlefield-1.jpg',
     gallery: [
       {
@@ -188,6 +194,7 @@ const products = [
   {
     _id: '7',
     title: 'Battlefield V',
+    categories: ['FPS', 'shooter'],
     imageUrl: '/images/battlefield-V.jpg',
     gallery: [
       {
@@ -219,6 +226,7 @@ const products = [
   {
     _id: '8',
     title: 'Call of Duty: Modern Warfare',
+    categories: ['FPS', 'shooter'],
     imageUrl: '/images/call-of-duty.jpg',
     gallery: [
       {
@@ -250,6 +258,7 @@ const products = [
   {
     _id: '9',
     title: 'Divinity II: Original Sin',
+    categories: ['cRPG', 'izometric'],
     imageUrl: '/images/divinity-os-2-de.jpg',
     gallery: [
       {
@@ -281,6 +290,7 @@ const products = [
   {
     _id: '10',
     title: 'Elex',
+    categories: ['cRPG', 'adventure'],
     imageUrl: '/images/elex.jpg',
     gallery: [
       {
@@ -312,6 +322,7 @@ const products = [
   {
     _id: '11',
     title: 'F1 2019',
+    categories: ['race', 'sport'],
     imageUrl: '/images/f12019.jpg',
     gallery: [
       {
@@ -343,6 +354,7 @@ const products = [
   {
     _id: '12',
     title: 'Far Cry 5',
+    categories: ['FPS', 'shooter'],
     imageUrl: '/images/far-cry-5.jpg',
     gallery: [
       {
@@ -374,6 +386,7 @@ const products = [
   {
     _id: '13',
     title: 'Fifa 20',
+    categories: ['sport'],
     imageUrl: '/images/fifa20.jpg',
     gallery: [
       {
@@ -405,6 +418,7 @@ const products = [
   {
     _id: '14',
     title: 'Football Manager 2020',
+    categories: ['sport'],
     imageUrl: '/images/fm2020.jpg',
     gallery: [
       {
@@ -436,6 +450,7 @@ const products = [
   {
     _id: '15',
     title: 'Forza Street',
+    categories: ['race', 'sport'],
     imageUrl: '/images/forzaStreet.jpg',
     gallery: [
       {
@@ -467,6 +482,7 @@ const products = [
   {
     _id: '16',
     title: 'Gears 5',
+    categories: ['TPP', 'shooter'],
     imageUrl: '/images/gears5.jpg',
     gallery: [
       {
@@ -498,6 +514,7 @@ const products = [
   {
     _id: '17',
     title: 'Grid',
+    categories: ['race', 'sport'],
     imageUrl: '/images/grid.jpg',
     gallery: [
       {
@@ -529,6 +546,7 @@ const products = [
   {
     _id: '18',
     title: 'Kingdom Come Deliverance',
+    categories: ['cRPG'],
     imageUrl: '/images/kingdomComeDel.jpg',
     gallery: [
       {
@@ -560,6 +578,7 @@ const products = [
   {
     _id: '19',
     title: 'Moto GP 19',
+    categories: ['race', 'sport'],
     imageUrl: '/images/moto-gp-19.jpg',
     gallery: [
       {
@@ -591,6 +610,7 @@ const products = [
   {
     _id: '20',
     title: 'Pro Evolution Soccer 2020',
+    categories: ['sport'],
     imageUrl: '/images/pes2020.jpg',
     gallery: [
       {
@@ -622,6 +642,7 @@ const products = [
   {
     _id: '21',
     title: 'Street Fighter Champions Edition',
+    categories: ['fight'],
     imageUrl: '/images/street-fighter-ch-e.jpg',
     gallery: [
       {
@@ -653,6 +674,7 @@ const products = [
   {
     _id: '22',
     title: 'Xpand Rally Extreme',
+    categories: ['race', 'sport'],
     imageUrl: '/images/xpand-rally-extreme.jpg',
     gallery: [
       {
