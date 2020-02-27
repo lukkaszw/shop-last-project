@@ -6,23 +6,36 @@
     border: none;
     color: #fff;
     cursor: pointer;
+    transition: .2s;
 
     &:focus {
       outline: 1px solid transparent;
     }
 
     &__decrease {
-      background-color: orange;
+      background-color: #ffa500;
+
+      &:hover {
+        background-color: darken(#ffa500, 10);
+      }
     }
 
     &__increase {
-      background-color: rgb(0, 132, 255);
+      background-color: #0084ff;
+
+      &:hover {
+        background-color: darken(#0084ff, 10);
+      }
+    }
+
+    &__decrease:disabled , &__increase:disabled {
+      background-color: #777;
     }
   }
 
   .amount {
     display: inline-block;
-    width: 50px;
+    min-width: 50px;
     text-align: right;
     font-size: 17px;
     padding:  4px 10px;

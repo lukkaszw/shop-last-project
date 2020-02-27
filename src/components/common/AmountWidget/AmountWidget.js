@@ -5,11 +5,12 @@ import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './AmountWidghet.module.scss';
 
-const AmountWidget = ({ value, dicreaseAction, increaseAction }) => {
+const AmountWidget = ({ value, dicreaseAction, increaseAction, maxAmount }) => {
   return ( 
     <div className={styles.root}>
       <button
         className={clsx([styles.btn, styles.btn__decrease])}
+        disabled={value === 1}
       >
         <FontAwesomeIcon icon={faMinus} />
       </button>
@@ -19,6 +20,7 @@ const AmountWidget = ({ value, dicreaseAction, increaseAction }) => {
       </span>
       <button
         className={clsx([styles.btn, styles.btn__increase])}
+        disabled={value === maxAmount}
       >
         <FontAwesomeIcon icon={faPlus} />
       </button>
