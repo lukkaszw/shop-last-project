@@ -66,7 +66,9 @@ const Product  = ({ _id, chosenAmount, title, categories, imageUrl, gallery, var
             <AmountWidget 
               value={chosenAmount}
             />
-            <form>
+            <form 
+              onSubmit={(e) => e.preventDefault()}
+            >
               <button
                 className={styles.btn}
               >

@@ -99,6 +99,19 @@
       font-size: 17px;
       border-radius: 5px;
       cursor: pointer;
+      transition: .1s;
+
+      &:hover, &:active {
+        background-color: darken(#609b03, 10);
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      &:active {
+        box-shadow: 0 0 9px lighten(#609b03, 30);
+      }
     }
   }
 }
