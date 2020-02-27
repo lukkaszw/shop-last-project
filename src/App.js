@@ -5,7 +5,7 @@ import MainLayout from './components/layout/MainLayout/MainLayout';
 import HomePage from './components/views/HomePage/HomePage.container';
 import NotFound from './components/views/NotFound/NotFound';
 import Order from './components/views/Order/Order';
-import ProductView from './components/views/ProductView/ProductView';
+import ProductView from './components/views/ProductView/ProductView.container';
 
 import './styles/global.scss';
 

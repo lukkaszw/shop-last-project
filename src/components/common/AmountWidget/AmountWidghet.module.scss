@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+
+  .btn {
+    padding: 0 10px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+
+    &:focus {
+      outline: 1px solid transparent;
+    }
+
+    &__decrease {
+      background-color: orange;
+    }
+
+    &__increase {
+      background-color: rgb(0, 132, 255);
+    }
+  }
+
+  .amount {
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+    font-size: 17px;
+    padding:  4px 10px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    background-color: #333;
+    border: none;
+  }
+}

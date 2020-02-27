@@ -8,6 +8,13 @@ const initialState = {
       error: false,
     },
   },
+  currentProduct: {
+    data: null,
+    loading: {
+      active: false,
+      error: false,
+    }
+  }
 };
 
 export default initialState;

@@ -35,6 +35,7 @@ const products = [
     _id: '2',
     title: 'Anno 1800',
     categories: ['RTS', 'strategy'],
+    producent: 'Infinity Ward',
     imageUrl: '/images/anno-1800.jpg',
     gallery: [
       {

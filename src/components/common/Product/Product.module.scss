@@ -1,0 +1,104 @@
+.root {
+  max-width: 680px;
+  margin: 40px auto;
+
+  .grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .image, .info, .prices, .form {
+    width: 320px;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+
+  .photo {
+    width: 100%;
+  }
+
+  .specification {
+    display: flex;
+
+    .categories {
+      min-width: 90px;
+
+      &__item {
+        padding: 3px 0;
+      }
+    }
+  }
+
+  .centered {
+    text-align: center;
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .description {
+    font-size: 14px;
+    overflow: hidden;
+    text-indent: 30px;
+    text-align: justify;
+    line-height: 1.5;
+  }
+
+  .prices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: right;
+
+    .promotion {
+      display: block;
+      position: relative;
+      background-color:  #609b03;
+      padding: 2px 20px 2px 5px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        width: 20px;
+        height: 20px;
+        background-color: #609b03;
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+    }
+
+    .oldPrice {
+      display: inline-block;
+      padding: 0 5px;
+      color: #921111;
+      text-decoration: line-through;
+    }
+
+    .price {
+      background-color: rgb(0, 132, 255);
+      padding:  4px 5px 4px 20px;
+    }
+  }
+
+  .form {
+    display: flex;
+    justify-content: space-between;
+
+    .btn {
+      background-color: #609b03;
+      color: #fff;
+      border: none;
+      padding: 5px 20px;
+      font-size: 17px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+}
