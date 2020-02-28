@@ -1,8 +1,6 @@
-import products from '../demo/products';
-
 const initialState = {
   products: {
-    data: products,
+    data: [],
     loading: {
       active: false,
       error: false,
@@ -14,6 +12,12 @@ const initialState = {
       active: false,
       error: false,
     }
+  },
+  cart: {
+    products: [],
+    totalAmount: 0,
+    totalPrice: 0,
+    isOpen: false,
   }
 };
 

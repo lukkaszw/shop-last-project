@@ -12,7 +12,7 @@ const AmountWidget = ({ value, decreaseAction, increaseAction, maxAmount }) => {
       <button
         className={clsx([styles.btn, styles.btn__decrease])}
         onClick={decreaseAction}
-        disabled={value === 1}
+        disabled={value <= 1}
       >
         <FontAwesomeIcon icon={faMinus} />
       </button>

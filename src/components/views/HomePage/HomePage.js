@@ -7,6 +7,10 @@ import styles from './HomePage.module.scss';
 class HomePage extends Component {
   state = {  }
 
+  componentDidMount() {
+    this.props.fetchProducts();
+  }
+
   renderProducts = () => {
     const { products } = this.props;
     if(products.length === 0) {
@@ -20,7 +24,6 @@ class HomePage extends Component {
       >
         <ProductCart {...product} />
       </div>
-      
     ));
   }
 

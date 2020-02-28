@@ -22,7 +22,8 @@ const Product  = ({
   description, 
   amount,
   increaseAmount,
-  decreaseAmount,  
+  decreaseAmount,
+  addToCart,  
 }) => {
   let promotionEl= null;
   let oldPriceEl = null;
@@ -91,11 +92,11 @@ const Product  = ({
             }
       
             <form 
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={addToCart}
             >
               <button
                 className={styles.btn}
-                disabled={amount <= 0}
+                disabled={amount <= 0 || chosenAmount === 0}
               >
                 Add to cart
               </button>
@@ -123,6 +124,7 @@ Product.propTypes = {
   description: PropTypes.string,
   increaseAmount: PropTypes.func,
   decreaseAmount: PropTypes.func,
+  addToCart: PropTypes.func,
 }
  
 export default Product ;

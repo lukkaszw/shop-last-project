@@ -3,13 +3,16 @@ import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import initialState from './initialState';
+
 import productReducer from './productRedux';
 import currentProductReducer from './currentProductRedux';
+import cartReducer from './cartRedux';
 
 // define reducers
 const reducers = {
   products: productReducer,
   currentProduct: currentProductReducer,
+  cart: cartReducer,
 };
 
 

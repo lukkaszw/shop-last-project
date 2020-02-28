@@ -1,5 +1,6 @@
-import products from '../demo/products';
-
+import products from '../demo/secondaryProducts';
+import { getCartProducts } from './cartRedux';
+import updateCurrentProductAmount from './reduxUtils/updateCurrentProductAmount';
 /* selectors */
 export const getProduct = ({ currentProduct }) => currentProduct.data;
 
@@ -11,13 +12,25 @@ const createActionName = name => `app/${reducerName}/${name}`;
 const FETCH_START = createActionName('FETCH_START');
 const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 const FETCH_ERROR = createActionName('FETCH_ERROR');
+const DECREASE_AMOUNT = createActionName('DECREASE_AMOUNT');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
 export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
+export const decreaseProductAmount = payload => ({ payload, type: DECREASE_AMOUNT });
 
-export const fetchProduct = (productId) => fetchSuccess(products.find(product => product._id === productId));
+
+
+export const fetchProduct = (productId) => {
+  return (dispatch, getState) => {
+    dispatch(fetchStarted());
+    const cartProducts = getCartProducts(getState());
+    const product = products.find(product => product._id === productId);
+    const productAfterUpdate = updateCurrentProductAmount(product, cartProducts);
+    dispatch(fetchSuccess(productAfterUpdate));
+  }
+}
 
 const currentProductReducer = (statePart = [], action = {}) => {
   switch (action.type) {
@@ -48,6 +61,16 @@ const currentProductReducer = (statePart = [], action = {}) => {
           error: action.payload,
         },
       };
+    }
+    case DECREASE_AMOUNT: {
+      console.log('jest i tutaj');
+      return {
+        ...statePart,
+        data: {
+          ...statePart.data,
+          amount: statePart.data.amount - action.payload,
+        }
+      }
     }
     default:
       return statePart;

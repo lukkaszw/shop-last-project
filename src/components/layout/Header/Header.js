@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 
 import NavDesktop from '../NavDesktop/NavDesktop';
-import CartBtn from '../CartBtn/CartBtn';
+import CartBtn from '../CartBtn/CartBtn.container';
 
 import styles from './Header.module.scss';
 

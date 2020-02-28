@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Product from '../../common/Product/Product';
+import PropTypes from 'prop-types';
 import styles from './ProductView.module.scss';
 
 class ProductView extends Component {
@@ -35,10 +36,30 @@ class ProductView extends Component {
     }));
   }
 
+  addToCartHandler = (e) => {
+    e.preventDefault();
+    const { product, addToCart, decreaseProductAmount } = this.props;
+    const amount = this.state.chosenAmount;
+    const productToCart = {
+      _id: product._id,
+      title: product.title,
+      price: product.price,
+      amount,
+    }
+
+    console.log(productToCart);
+
+    addToCart(productToCart);
+    decreaseProductAmount(amount);
+    this.setState({
+      chosenAmount: 0,
+    })
+  }
+
   render() { 
     const { product, loading } = this.props;
     const { chosenAmount } = this.state;
-    const { decreaseAmountHandler, increaseAmountHandler } = this;
+    const { decreaseAmountHandler, increaseAmountHandler, addToCartHandler } = this;
     return ( 
       <section className="container">
         {
@@ -48,6 +69,7 @@ class ProductView extends Component {
             chosenAmount={chosenAmount}
             decreaseAmount={decreaseAmountHandler}
             increaseAmount={increaseAmountHandler}
+            addToCart={addToCartHandler}
           />
           :
           <p>Product not found!</p>
@@ -56,6 +78,13 @@ class ProductView extends Component {
       </section>
      );
   }
+}
+
+ProductView.propTypes = {
+  product: PropTypes.object,
+  loading: PropTypes.bool,
+  addToCart: PropTypes.func,
+  decreaseProductAmount: PropTypes.func,
 }
  
 export default ProductView;
