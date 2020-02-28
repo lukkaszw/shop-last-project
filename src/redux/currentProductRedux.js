@@ -13,12 +13,14 @@ const FETCH_START = createActionName('FETCH_START');
 const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
 const FETCH_ERROR = createActionName('FETCH_ERROR');
 const DECREASE_AMOUNT = createActionName('DECREASE_AMOUNT');
+const RESET_CURRENT_PRODUCT = createActionName('RESET_CURRENT_PRODUCT');
 
 /* action creators */
 export const fetchStarted = payload => ({ payload, type: FETCH_START });
 export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 export const decreaseProductAmount = payload => ({ payload, type: DECREASE_AMOUNT });
+export const resetCurrentProduct = () => ({ type: RESET_CURRENT_PRODUCT });
 
 
 
@@ -27,7 +29,7 @@ export const fetchProduct = (productId) => {
     dispatch(fetchStarted());
     const cartProducts = getCartProducts(getState());
     const product = products.find(product => product._id === productId);
-    const productAfterUpdate = updateCurrentProductAmount(product, cartProducts);
+    const productAfterUpdate = updateCurrentProductAmount({...product}, cartProducts);
     dispatch(fetchSuccess(productAfterUpdate));
   }
 }
@@ -69,6 +71,15 @@ const currentProductReducer = (statePart = [], action = {}) => {
         data: {
           ...statePart.data,
           amount: statePart.data.amount - action.payload,
+        }
+      }
+    }
+    case RESET_CURRENT_PRODUCT: {
+      return {
+        data: null,
+        loading: {
+          active: false,
+          error: false,
         }
       }
     }

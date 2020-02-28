@@ -8,8 +8,18 @@ import styles from './Cart.module.scss';
 
 class Cart extends Component {
   state = {  }
+
+  componentDidMount() {
+    this.props.resetCurrentProduct();
+  }
+
   render() { 
-    const { cartProducts, totalPrice, removeFromCart } = this.props;
+    const { 
+      cartProducts, 
+      totalPrice, 
+      removeFromCart,
+      increaseAmount,
+      decreaseAmount } = this.props;
 
     return ( 
       <section 
@@ -24,6 +34,8 @@ class Cart extends Component {
                   cartProducts={cartProducts}
                   totalPrice={totalPrice}
                   removeFromCart={removeFromCart}
+                  increaseAmount={increaseAmount}
+                  decreaseAmount={decreaseAmount}
                 />
                 :
                 <> 
@@ -47,6 +59,9 @@ Cart.propTypes = {
   cartProducts: PropTypes.array,
   totalPrice: PropTypes.number,
   removeFromCart: PropTypes.func,
+  increaseAmount: PropTypes.func,
+  decreaseAmount: PropTypes.func,
+  resetCurrentProduct: PropTypes.func,
 };
  
 export default Cart;

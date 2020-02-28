@@ -23,7 +23,7 @@ export const fetchProducts = () => {
   return (dispatch, getState) => {
     dispatch(fetchStarted());
     const cartProducts = getCartProducts(getState());
-    const productsAfterUpdate = updateProductsAmount(products, cartProducts);
+    const productsAfterUpdate = updateProductsAmount(JSON.parse(JSON.stringify(products)), cartProducts);
     dispatch(fetchSuccess(productsAfterUpdate));
   }
 }

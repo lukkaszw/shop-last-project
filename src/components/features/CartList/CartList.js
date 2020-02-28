@@ -5,7 +5,7 @@ import CartItem from '../../common/CartItem/CartItem';
 
 import styles from './CartList.module.scss';
 
-const CartList = ({ cartProducts, totalPrice, removeFromCart }) => {
+const CartList = ({ cartProducts, totalPrice, removeFromCart, increaseAmount, decreaseAmount }) => {
   return ( 
     <div className={styles.root}>
       <ul className={styles.list}>
@@ -18,13 +18,15 @@ const CartList = ({ cartProducts, totalPrice, removeFromCart }) => {
               <CartItem 
                 {...product}
                 removeFromCart={removeFromCart} 
+                increaseAmount={increaseAmount}
+                decreaseAmount={decreaseAmount}
               />
             </li>
           ))
         }
       </ul>
       <div className={styles.price}>
-        <p>total price: <strong>{totalPrice} zł</strong></p>
+        <p>total price: <strong>{Math.round(totalPrice * 100) / 100} zł</strong></p>
       </div>
       <div className={styles.confirm}>
         <Link 
@@ -42,6 +44,8 @@ CartList.propTypes = {
   cartProducts: PropTypes.array,
   totalPrice: PropTypes.number,
   removeFromCart: PropTypes.func,
+  increaseAmount: PropTypes.func,
+  decreaseAmount: PropTypes.func,
 };
 
 CartList.defaultProps = {

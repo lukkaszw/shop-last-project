@@ -11,7 +11,8 @@ import Gallery from '../Gallery/Gallery';
 import getDiscountPercent from '../../../utils/getDiscountPercent';
 
 const Product  = ({ 
-  _id, chosenAmount, 
+  _id, 
+  chosenAmount, 
   title, 
   categories, 
   imageUrl, 

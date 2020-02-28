@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 import styles from './CartItem.module.scss';
 
-const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart }) => {
+const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, increaseAmount, decreaseAmount }) => {
   const [isNoteOpen, setNoteApperance] = useState(false);
   const [noteText, setNoteText] = useState(note);
 
@@ -16,7 +16,7 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart }
           <h3>{title}</h3>
         </div>
         <div>
-          <h3>{price * amount} zł</h3>
+          <h3>{Math.round((price * amount) * 100) / 100} zł</h3>
         </div>
       </div>
       <div className={styles.bottom}>
@@ -38,6 +38,8 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart }
           <AmountWidghet 
             value={amount}
             maxAmount={maxAmount}
+            increaseAction={() => increaseAmount(_id)}
+            decreaseAction={() => decreaseAmount(_id)}
           />
         </div>
       </div>

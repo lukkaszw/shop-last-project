@@ -10,10 +10,14 @@ const createActionName = name => `app/${reducerName}/${name}`;
 /* action types */
 const ADD_TO_CART = createActionName('ADD_TO_CART');
 const REMOVE_FROM_CART = createActionName('REMOVE_FROM_CART');
+const INCREASE_AMOUNT = createActionName('INCREASE_AMOUNT');
+const DECREASE_AMOUNT = createActionName('DECREASE_AMOUNT');
 
 /* action creators */
-export const addToCart = (payload) => ({ payload, type: ADD_TO_CART })
-export const removeFromCart = (payload) => ({ payload, type: REMOVE_FROM_CART })
+export const addToCart = (payload) => ({ payload, type: ADD_TO_CART });
+export const removeFromCart = (payload) => ({ payload, type: REMOVE_FROM_CART });
+export const increaseAmount = (payload) => ({ payload, type: INCREASE_AMOUNT });
+export const decreaseAmount = (payload) => ({ payload, type: DECREASE_AMOUNT });
 
 const cartReducer = (statePart = [], action = {}) => {
   switch (action.type) {
@@ -28,7 +32,6 @@ const cartReducer = (statePart = [], action = {}) => {
         newProducts[existProductIndex].maxAmount = newProducts[existProductIndex].amount + product.maxAmount;
         newProducts[existProductIndex].amount += product.amount; 
       }
-
       return {
         ...statePart,
         products: newProducts,
@@ -46,6 +49,34 @@ const cartReducer = (statePart = [], action = {}) => {
         products: statePart.products.filter(product => product._id !== prodId),
         totalPrice: statePart.totalPrice - priceToRemove,
         totalAmount: statePart.totalAmount - amountToRemove,
+      }
+    }
+    case INCREASE_AMOUNT: {
+      const prodId = action.payload;
+      const productToUpdate = statePart.products.find(product => product._id === prodId);
+      return {
+        products: statePart.products.map(product => {
+            if(product._id === prodId) {
+              product.amount++;
+            }
+            return product;
+          }),
+        totalPrice: statePart.totalPrice + productToUpdate.price,
+        totalAmount: statePart.totalAmount + 1,
+      }
+    }
+    case DECREASE_AMOUNT: {
+      const prodId = action.payload;
+      const productToUpdate = statePart.products.find(product => product._id === prodId);
+      return {
+        products: statePart.products.map(product => {
+            if(product._id === prodId) {
+              product.amount--;
+            }
+            return product;
+          }),
+        totalPrice: statePart.totalPrice - productToUpdate.price,
+        totalAmount: statePart.totalAmount - 1,
       }
     }
     default:
