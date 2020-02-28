@@ -17,7 +17,6 @@ const initialState = {
     products: [],
     totalAmount: 0,
     totalPrice: 0,
-    isOpen: false,
   }
 };
 

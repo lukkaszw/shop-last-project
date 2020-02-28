@@ -14,6 +14,7 @@ const NavDesktop = () => {
           navLinks.map((linkItem, index) => (
             <li className={styles.navList__Item} key={index}>
               <NavLink 
+                exact
                 className={styles.navList__link}
                 to={linkItem.link} 
                 activeClassName={styles.active}

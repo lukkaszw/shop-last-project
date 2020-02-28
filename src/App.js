@@ -6,6 +6,7 @@ import HomePage from './components/views/HomePage/HomePage.container';
 import NotFound from './components/views/NotFound/NotFound';
 import Order from './components/views/Order/Order';
 import ProductView from './components/views/ProductView/ProductView.container';
+import Cart from './components/views/Cart/Cart.container';
 
 import './styles/global.scss';
 
@@ -16,6 +17,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/product/:id" component={ProductView} />
+          <Route exact path="/cart" component={Cart} />
           <Route exact path="/order" component={Order} />
           <Route path='*' component={NotFound} />
         </Switch>
