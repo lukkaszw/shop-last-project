@@ -5,7 +5,7 @@ import clsx from 'clsx';
 
 import styles from './CartItem.module.scss';
 
-const CartItem = ({ _id, title, price, amount, maxAmount, note }) => {
+const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart }) => {
   const [isNoteOpen, setNoteApperance] = useState(false);
   const [noteText, setNoteText] = useState(note);
 
@@ -27,7 +27,10 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note }) => {
           >
             Add note
           </button>
-          <button className={clsx([styles.btn, styles.btn__remove])}>
+          <button 
+            onClick={() => removeFromCart(_id)}
+            className={clsx([styles.btn, styles.btn__remove])}
+          >
             Delete
           </button>
         </div>
@@ -66,6 +69,7 @@ CartItem.propTypes = {
   amount: PropTypes.number,
   maxAmount: PropTypes.number,
   description: PropTypes.string,
+  removeFromCart: PropTypes.func,
 };
 
 CartItem.defaultProps = {

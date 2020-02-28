@@ -9,7 +9,7 @@ import styles from './Cart.module.scss';
 class Cart extends Component {
   state = {  }
   render() { 
-    const { cartProducts, totalPrice } = this.props;
+    const { cartProducts, totalPrice, removeFromCart } = this.props;
 
     return ( 
       <section 
@@ -23,6 +23,7 @@ class Cart extends Component {
                 <CartList   
                   cartProducts={cartProducts}
                   totalPrice={totalPrice}
+                  removeFromCart={removeFromCart}
                 />
                 :
                 <> 
@@ -45,6 +46,7 @@ Cart.propTypes = {
   closeCart: PropTypes.func,
   cartProducts: PropTypes.array,
   totalPrice: PropTypes.number,
+  removeFromCart: PropTypes.func,
 };
  
 export default Cart;

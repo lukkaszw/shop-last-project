@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import CartItem from '../../common/CartItem/CartItem';
 
 import styles from './CartList.module.scss';
 
-const CartList = ({ cartProducts, totalPrice }) => {
+const CartList = ({ cartProducts, totalPrice, removeFromCart }) => {
   return ( 
     <div className={styles.root}>
       <ul className={styles.list}>
@@ -14,7 +15,10 @@ const CartList = ({ cartProducts, totalPrice }) => {
               key={product._id} 
               className={styles.item}
             >
-              <CartItem {...product} />
+              <CartItem 
+                {...product}
+                removeFromCart={removeFromCart} 
+              />
             </li>
           ))
         }
@@ -23,9 +27,12 @@ const CartList = ({ cartProducts, totalPrice }) => {
         <p>total price: <strong>{totalPrice} zł</strong></p>
       </div>
       <div className={styles.confirm}>
-        <button className={styles.btn}>
+        <Link 
+          to="/order"
+          className={styles.btn}
+        >
           Order now!
-        </button>
+        </Link>
       </div>
     </div>
    );
@@ -34,6 +41,7 @@ const CartList = ({ cartProducts, totalPrice }) => {
 CartList.propTypes = {
   cartProducts: PropTypes.array,
   totalPrice: PropTypes.number,
+  removeFromCart: PropTypes.func,
 };
 
 CartList.defaultProps = {
