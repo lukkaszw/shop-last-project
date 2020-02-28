@@ -52,8 +52,8 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, 
           ref={noteTextEl}
           className={styles.textarea}
           onChange={(e) => setNoteText(e.target.value)}
+          value={noteText}
         >
-          {noteText}
         </textarea>
         <div className={styles.note_btns}>
           <button 
