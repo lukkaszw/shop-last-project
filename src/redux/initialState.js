@@ -14,9 +14,16 @@ const initialState = {
     }
   },
   cart: {
-    products: [],
-    totalAmount: 0,
-    totalPrice: 0,
+    products: [
+      {_id: "4", 
+      title: "Assasin's Creed: Odyssey", 
+      price: 129, 
+      amount: 1, 
+      maxAmount: 15
+    },
+    {_id: "6", title: "Battlefield 1", price: 69, amount: 1, maxAmount: 12}],
+    totalAmount: 2,
+    totalPrice: 198,
   }
 };
 

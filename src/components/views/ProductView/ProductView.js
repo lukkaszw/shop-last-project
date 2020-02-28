@@ -45,6 +45,7 @@ class ProductView extends Component {
       title: product.title,
       price: product.price,
       amount,
+      maxAmount: product.amount,
     }
 
     console.log(productToCart);

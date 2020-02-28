@@ -24,7 +24,8 @@ const cartReducer = (statePart = [], action = {}) => {
       if(existProductIndex === -1) {
         newProducts.push(product);
       } else {
-        newProducts[existProductIndex].amount += product.amount;
+        newProducts[existProductIndex].maxAmount = newProducts[existProductIndex].amount + product.maxAmount;
+        newProducts[existProductIndex].amount += product.amount; 
       }
 
       return {
