@@ -12,12 +12,14 @@ const ADD_TO_CART = createActionName('ADD_TO_CART');
 const REMOVE_FROM_CART = createActionName('REMOVE_FROM_CART');
 const INCREASE_AMOUNT = createActionName('INCREASE_AMOUNT');
 const DECREASE_AMOUNT = createActionName('DECREASE_AMOUNT');
+const ADD_NOTE = createActionName('ADD_NOTE');
 
 /* action creators */
 export const addToCart = (payload) => ({ payload, type: ADD_TO_CART });
 export const removeFromCart = (payload) => ({ payload, type: REMOVE_FROM_CART });
 export const increaseAmount = (payload) => ({ payload, type: INCREASE_AMOUNT });
 export const decreaseAmount = (payload) => ({ payload, type: DECREASE_AMOUNT });
+export const addNoteToProduct = (payload) => ({ payload, type: ADD_NOTE });
 
 const cartReducer = (statePart = [], action = {}) => {
   switch (action.type) {
@@ -77,6 +79,18 @@ const cartReducer = (statePart = [], action = {}) => {
           }),
         totalPrice: statePart.totalPrice - productToUpdate.price,
         totalAmount: statePart.totalAmount - 1,
+      }
+    }
+    case ADD_NOTE: {
+      const { prodId, note } = action.payload;
+      return {
+        ...statePart,
+        products: statePart.products.map(product => {
+          if(product._id === prodId) {
+            product.note = note;
+          }
+          return product;
+        }),
       }
     }
     default:

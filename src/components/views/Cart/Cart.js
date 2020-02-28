@@ -19,7 +19,8 @@ class Cart extends Component {
       totalPrice, 
       removeFromCart,
       increaseAmount,
-      decreaseAmount } = this.props;
+      decreaseAmount,
+      addNoteToProduct } = this.props;
 
     return ( 
       <section 
@@ -36,6 +37,7 @@ class Cart extends Component {
                   removeFromCart={removeFromCart}
                   increaseAmount={increaseAmount}
                   decreaseAmount={decreaseAmount}
+                  addNoteToProduct={addNoteToProduct}
                 />
                 :
                 <> 
@@ -62,6 +64,7 @@ Cart.propTypes = {
   increaseAmount: PropTypes.func,
   decreaseAmount: PropTypes.func,
   resetCurrentProduct: PropTypes.func,
+  addNoteToProduct: PropTypes.func,
 };
  
 export default Cart;

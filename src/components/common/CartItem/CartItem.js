@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import AmountWidghet from '../AmountWidget/AmountWidget';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import styles from './CartItem.module.scss';
 
-const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, increaseAmount, decreaseAmount }) => {
+const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, increaseAmount, decreaseAmount, addNoteToProduct }) => {
   const [isNoteOpen, setNoteApperance] = useState(false);
   const [noteText, setNoteText] = useState(note);
+  const noteTextEl = useRef()
 
   return ( 
     <div className={styles.root}>
@@ -22,7 +23,10 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, 
       <div className={styles.bottom}>
         <div>
           <button
-            onClick={() => setNoteApperance(true)} 
+            onClick={() => {
+              setNoteApperance(true);
+              noteTextEl.current.focus();
+            }} 
             className={clsx([styles.btn, styles.btn__note])}
           >
             Add note
@@ -45,9 +49,11 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, 
       </div>
       <div className={clsx([styles.note, isNoteOpen && styles.active])}>
         <textarea 
+          ref={noteTextEl}
           className={styles.textarea}
-          value={noteText}
+          onChange={(e) => setNoteText(e.target.value)}
         >
+          {noteText}
         </textarea>
         <div className={styles.note_btns}>
           <button 
@@ -56,7 +62,13 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, 
           >
             Cancel
           </button>
-          <button className={clsx([styles.btn, styles.btn__add])}>
+          <button 
+            onClick={() => {
+              addNoteToProduct(_id, noteText);
+              setNoteApperance(false);
+            }}
+            className={clsx([styles.btn, styles.btn__add])}
+          >
             Add
           </button>
         </div>
