@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -7,15 +7,21 @@ import { validateOrderForm } from '../../../utils/validators';
 import styles from './OrderForm.module.scss';
 
 class OrderForm extends Component {
-  state = { 
-    name: '',
-    email: '',
-    phone: '',
-    country: '',
-    address: '',
-    postCode: '',
-    city: '',
-    errors: [],
+  constructor(props) {
+    super(props);
+    this.state = { 
+      name: '',
+      email: '',
+      phone: '',
+      country: '',
+      address: '',
+      postCode: '',
+      city: '',
+      errors: [],
+    }
+
+    this.policyCheck = createRef();
+    this.shopTermsCheck = createRef();
   }
 
   inputChangeHandler = (e) => {
@@ -75,10 +81,19 @@ class OrderForm extends Component {
 
   sendOrderHandler = (e) => {
     e.preventDefault();
+    const { policyCheck, shopTermsCheck } = this;
     const { resetCart } = this.props;
     const formOptions = {...this.state};
     delete formOptions.errors;
     const errors = validateOrderForm(formOptions);
+    if(!policyCheck.current.checked) {
+      errors.push('privacy');
+    }
+
+    if(!shopTermsCheck.current.checked) {
+      errors.push('shop-terms');
+    }
+
     if(errors.length > 0) {
       this.setState({
         errors,
@@ -91,12 +106,20 @@ class OrderForm extends Component {
     resetCart();
   }
 
+  resetCheckboxError = (fieldId) => {
+    if(!this.state.errors.includes(fieldId)) return;
+
+    this.setState(prevState => ({
+      errors: prevState.errors.filter(error => error !== fieldId),
+    }));
+  }
+
 
 
   render() { 
     
     const { name, email, phone, country, address, postCode, city, errors  } = this.state;
-    const { inputChangeHandler, sendOrderHandler, inputPhoneHandler, inputPostCodeHandler } = this;
+    const { inputChangeHandler, sendOrderHandler, inputPhoneHandler, inputPostCodeHandler, resetCheckboxError } = this;
 
     return ( 
       <form
@@ -201,6 +224,38 @@ class OrderForm extends Component {
               id="city"
             />
           </div>
+        </div>
+        <div className={clsx([styles.regulations, errors.includes('privacy') && styles.error])}>
+          <input 
+            onClick={() => resetCheckboxError('privacy')}
+            defaultChecked={true}
+            className={styles.checkbox}
+            type='checkbox'
+            id='privacy'
+            ref={this.policyCheck}
+          />
+          <label 
+            className={styles.checkLabel}
+            htmlFor="privacy"
+          >
+            I have read the privacy policy and I agree to the processing of personal data.
+          </label>
+        </div>
+        <div className={clsx([styles.regulations, errors.includes('shop-terms') && styles.error])}>
+          <input 
+            onClick={() => resetCheckboxError('shop-terms')}
+            defaultChecked={true}
+            className={styles.checkbox}
+            type='checkbox'
+            ref={this.shopTermsCheck}
+            id="shop-terms"
+          />
+          <label 
+            className={styles.checkLabel}
+            htmlFor="shop-terms"
+          >
+              I agree to GameStore shopping terms and conditions.
+          </label>
         </div>
         <div className={styles.submit}>
           <Link 

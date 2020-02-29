@@ -1,6 +1,29 @@
 .root {
   margin: 20px 0;
 
+  .regulations {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    .checkbox {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .checkLabel {
+      cursor: pointer;
+    }
+
+    &.error {
+      
+      .checkLabel {
+        color: #b33a3a;
+      }
+    }
+  }
+
   .formItem {
     margin-bottom: 10px;
 
