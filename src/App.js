@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import MainLayout from './components/layout/MainLayout/MainLayout';
 import HomePage from './components/views/HomePage/HomePage.container';
 import NotFound from './components/views/NotFound/NotFound';
-import Order from './components/views/Order/Order';
+import Order from './components/views/Order/Order.container';
 import ProductView from './components/views/ProductView/ProductView.container';
 import Cart from './components/views/Cart/Cart.container';
 

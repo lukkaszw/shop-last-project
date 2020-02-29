@@ -1,0 +1,22 @@
+.root {
+
+  .list {
+    list-style: none;
+
+    .item {
+      margin: 10px 0;
+    }
+  }
+
+  .price {
+
+    padding: 20px 0;
+    text-align: right;
+    font-size: 20px;
+
+    strong {
+      padding-left: 10px;
+      color: #ef0;
+    } 
+  }
+}

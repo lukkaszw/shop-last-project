@@ -13,6 +13,7 @@ const REMOVE_FROM_CART = createActionName('REMOVE_FROM_CART');
 const INCREASE_AMOUNT = createActionName('INCREASE_AMOUNT');
 const DECREASE_AMOUNT = createActionName('DECREASE_AMOUNT');
 const ADD_NOTE = createActionName('ADD_NOTE');
+const RESET_CART = createActionName('RESET_CART');
 
 /* action creators */
 export const addToCart = (payload) => ({ payload, type: ADD_TO_CART });
@@ -20,6 +21,7 @@ export const removeFromCart = (payload) => ({ payload, type: REMOVE_FROM_CART })
 export const increaseAmount = (payload) => ({ payload, type: INCREASE_AMOUNT });
 export const decreaseAmount = (payload) => ({ payload, type: DECREASE_AMOUNT });
 export const addNoteToProduct = (payload) => ({ payload, type: ADD_NOTE });
+export const resetCart = () => ({ type: RESET_CART })
 
 const cartReducer = (statePart = [], action = {}) => {
   switch (action.type) {
@@ -91,6 +93,13 @@ const cartReducer = (statePart = [], action = {}) => {
           }
           return product;
         }),
+      }
+    }
+    case RESET_CART: {
+      return {
+        products: [],
+        totalPrice: 0,
+        totalAmount: 0,
       }
     }
     default:
