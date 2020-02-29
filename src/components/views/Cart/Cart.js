@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import CartList from '../../features/CartList/CartList';
+import MessageWithLink from '../../common/MessageWithLink/MessageWithLink';
 
 import PropTypes from 'prop-types';
 
 import styles from './Cart.module.scss';
 
 class Cart extends Component {
-  state = {  }
 
   componentDidMount() {
     this.props.resetCurrentProduct();
@@ -40,12 +39,9 @@ class Cart extends Component {
                   addNoteToProduct={addNoteToProduct}
                 />
                 :
-                <> 
-                  <p className={styles.message}>No products in cart! </p>
-                  <Link className={styles.link} to='/'>
-                    back to shop
-                  </Link>
-                </>
+                <MessageWithLink 
+                  message='No products in cart!'
+                />
             }
           </div>
         </div>

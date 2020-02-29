@@ -9,10 +9,13 @@
   } 
 
   .price {
-    width: 220px;
+    display: inline;
     font-size: 22px;
-    border-top: 1px solid #444;
-    padding: 10px 0;
+
+    span {
+      padding: 10px 10px 0 0;
+      border-top: 1px solid #444;
+    }
 
     strong {
       padding-left: 10px;

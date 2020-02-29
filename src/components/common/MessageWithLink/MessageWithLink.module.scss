@@ -1,0 +1,15 @@
+.root {
+  margin: 30px 0;
+  text-align: center;
+
+  .link {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 20px;
+    color: #00a2ff;
+
+    &:hover {
+      color: darken(#00a2ff, 20);
+    }
+  }
+}

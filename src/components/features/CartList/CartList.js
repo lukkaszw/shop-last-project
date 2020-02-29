@@ -27,7 +27,7 @@ const CartList = ({ cartProducts, totalPrice, removeFromCart, increaseAmount, de
         }
       </ul>
       <div className={styles.price}>
-        <p>total price: <strong>{Math.round(totalPrice * 100) / 100} zł</strong></p>
+        <span>total price: <strong>{Math.round(totalPrice * 100) / 100} zł</strong></span>
       </div>
       <div className={styles.confirm}>
         <Link 
