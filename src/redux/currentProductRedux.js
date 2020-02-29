@@ -65,7 +65,6 @@ const currentProductReducer = (statePart = [], action = {}) => {
       };
     }
     case DECREASE_AMOUNT: {
-      console.log('jest i tutaj');
       return {
         ...statePart,
         data: {

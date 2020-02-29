@@ -1,6 +1,4 @@
 import products from '../demo/products';
-import updateProductsAmount from './reduxUtils/updateProductsAmount';
-import { getCartProducts } from './cartRedux';
 
 /* selectors */
 export const getProducts = ({ products }) => products.data;
@@ -20,11 +18,9 @@ export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 
 export const fetchProducts = () => {
-  return (dispatch, getState) => {
+  return (dispatch) => {
     dispatch(fetchStarted());
-    const cartProducts = getCartProducts(getState());
-    const productsAfterUpdate = updateProductsAmount(JSON.parse(JSON.stringify(products)), cartProducts);
-    dispatch(fetchSuccess(productsAfterUpdate));
+    dispatch(fetchSuccess(JSON.parse(JSON.stringify(products))));
   }
 }
 

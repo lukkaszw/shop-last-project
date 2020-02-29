@@ -49,13 +49,11 @@ class ProductView extends Component {
       maxAmount: product.amount,
     }
 
-    console.log(productToCart);
-
     addToCart(productToCart);
     decreaseProductAmount(amount);
     this.setState({
       chosenAmount: 0,
-    })
+    });
   }
 
   render() { 
