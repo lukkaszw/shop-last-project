@@ -1,10 +1,39 @@
 const Product = require('../models/product');
 
 const getProducts = async (req, res) => {
+  let select = '';
+  if(req.query.only) {
+    const { only } = req.query;
+    select = only.split('-').join(' ');
+  }
+
+  let skip = 0;
+  let limit;
+
+  if(req.query.skip) {
+    skip = parseInt(req.query.skip);
+  }
+
+  if(req.query.limit) {
+    limit = parseInt(req.query.limit);
+  }
+ 
+
   try {
-    const products = await Product.find();
-    
-    res.json(products);
+    const allDocsAmount =  await Product.find().countDocuments();
+    const products = await Product
+      .find()
+      .sort({
+        createdAt: -1,
+      })
+      .skip(skip)
+      .limit(limit)
+      .select(select);
+
+    res.json({
+      products,
+      allDocsAmount,
+    });
   } catch (error) {
     res.status(500).json({
       error,
