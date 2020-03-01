@@ -7,10 +7,12 @@ import initialState from './initialState';
 import productReducer from './productRedux';
 import currentProductReducer from './currentProductRedux';
 import cartReducer from './cartRedux';
+import queriesProductsReducer from './currentProductRedux';
 
 // define reducers
 const reducers = {
   products: productReducer,
+  queries: queriesProductsReducer,
   currentProduct: currentProductReducer,
   cart: cartReducer,
 };

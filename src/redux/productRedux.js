@@ -1,4 +1,5 @@
-import products from '../demo/products';
+import axios from 'axios';
+import api from '../config/api';
 
 /* selectors */
 export const getProducts = ({ products }) => products.data;
@@ -17,10 +18,24 @@ export const fetchStarted = payload => ({ payload, type: FETCH_START });
 export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 
-export const fetchProducts = () => {
-  return (dispatch) => {
+export const fetchProducts = ( query = { limit: undefined, skip: 0 }) => {
+  const { limit, skip } = query;
+  return async (dispatch) => {
     dispatch(fetchStarted());
-    dispatch(fetchSuccess(JSON.parse(JSON.stringify(products))));
+    try {
+      const url = `${api.url}/${api.endpoints.products}`;
+      const result = await axios.get(url, {
+        params: {
+          limit,
+          skip,
+        }
+      });
+      const products = result.data.products;
+      const allDocsAmount = result.data.allDocsAmount;
+      dispatch(fetchSuccess({ products, allDocsAmount  }));
+    } catch (error) {
+      dispatch(fetchError());
+    }
   }
 }
 
@@ -44,7 +59,8 @@ const productReducer = (statePart = [], action = {}) => {
           active: false,
           error: false,
         },
-        data: action.payload,
+        data: action.payload.products,
+        allDocsAmount: action.payload.allDocsAmount,
       };
     }
     case FETCH_ERROR: {

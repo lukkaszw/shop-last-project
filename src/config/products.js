@@ -1,0 +1,1 @@
+export const maxProdsOnPage = 12;

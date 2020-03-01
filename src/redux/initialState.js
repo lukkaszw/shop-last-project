@@ -1,10 +1,14 @@
 const initialState = {
   products: {
     data: [],
+    allDocsAmount: 0,
     loading: {
       active: false,
       error: false,
     },
+  },
+  queries: {
+    page: 1,
   },
   currentProduct: {
     data: null,
