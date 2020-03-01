@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const dbUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0-r6yso.mongodb.net/game-store?retryWrites=true&w=majority`;
+const dbUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0-r6yso.mongodb.net/games-store?retryWrites=true&w=majority`;
 
 mongoose.connect(dbUrl, {
   useNewUrlParser: true,
