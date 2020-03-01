@@ -257,6 +257,7 @@ class OrderForm extends Component {
               I agree to GameStore shopping terms and conditions.
           </label>
         </div>
+        <p className={styles.required}>* - option required</p>
         <div className={styles.submit}>
           <Link 
             to='/cart'
