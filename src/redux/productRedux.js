@@ -23,6 +23,7 @@ export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 export const fetchProducts = ( query = { limit: undefined, skip: 0 }) => {
   const { limit, skip } = query;
   return async (dispatch) => {
+    dispatch(fetchStarted());
     try {
       const url = `${api.url}/${api.endpoints.products}`;
       const result = await axios.get(url, {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ProductCart from '../../common/ProductCart/ProductCart';
 import Pagination from '../../features/Pagination/Pagination.container';
+import Loader from '../../common/Loader/Loader';
 import PropTypes from 'prop-types';
 
 import styles from './HomePage.module.scss';
@@ -27,19 +28,33 @@ class HomePage extends Component {
   }
 
   renderProducts = () => {
-    const { products } = this.props;
-    if(products.length === 0) {
+    const { products, isLoading } = this.props;
+    if(isLoading) {
+      return (
+        <div className={styles.loader}>
+          <Loader />
+        </div>
+      )
+    }
+
+    if(products.length === 0 && !isLoading) {
       return <h3>No products available! Please try again later!</h3>
     }
 
-    return products.map(product => (
-      <div 
-        key={product._id}
-        className={styles.product}
-      >
-        <ProductCart {...product} />
-      </div>
-    ));
+    return (
+      <section className={styles.products}>
+      {
+        products.map(product => (
+          <div 
+            key={product._id}
+            className={styles.product}
+          >
+            <ProductCart {...product} />
+          </div>
+        ))
+      }
+      </section>
+    )
   }
 
   render() { 
@@ -48,11 +63,8 @@ class HomePage extends Component {
     return ( 
       <div className={styles.root}>
         <Pagination />
-        <section className={styles.products}>
-          {renderProducts()}
-        </section>
+        {renderProducts()}
       </div>
-
      );
   }
 }

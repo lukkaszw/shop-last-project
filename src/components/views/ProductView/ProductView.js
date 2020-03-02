@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Product from '../../common/Product/Product';
+import Loader from '../../common/Loader/Loader';
+
 import PropTypes from 'prop-types';
 import styles from './ProductView.module.scss';
 
@@ -56,25 +58,41 @@ class ProductView extends Component {
     });
   }
 
-  render() { 
-    const { product, loading } = this.props;
-    const { chosenAmount } = this.state;
+  renderProduct = () => {
+    const { isLoading, product } = this.props;
     const { decreaseAmountHandler, increaseAmountHandler, addToCartHandler } = this;
+    const { chosenAmount } = this.state;
+
+    if(isLoading) {
+      return (
+        <div className={styles.loader}>
+          <Loader />
+        </div>
+      );
+    }
+
+    if(!product) {
+      return ( 
+        <p>Product not found!</p>
+      );
+    }
+
+    return (
+      <Product 
+      {...product} 
+      chosenAmount={chosenAmount}
+      decreaseAmount={decreaseAmountHandler}
+      increaseAmount={increaseAmountHandler}
+      addToCart={addToCartHandler}
+    />
+    );
+  }
+
+  render() { 
+   
     return ( 
       <section className="container">
-        {
-          product && !loading ?
-          <Product 
-            {...product} 
-            chosenAmount={chosenAmount}
-            decreaseAmount={decreaseAmountHandler}
-            increaseAmount={increaseAmountHandler}
-            addToCart={addToCartHandler}
-          />
-          :
-          <p>Product not found!</p>
-        }
-        
+        {this.renderProduct()}
       </section>
      );
   }
@@ -82,7 +100,7 @@ class ProductView extends Component {
 
 ProductView.propTypes = {
   product: PropTypes.object,
-  loading: PropTypes.bool,
+  isLoading: PropTypes.bool,
   addToCart: PropTypes.func,
   decreaseProductAmount: PropTypes.func,
 }

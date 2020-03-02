@@ -1,10 +1,10 @@
 import axios from 'axios';
 import api from '../config/api';
-import products from '../demo/secondaryProducts';
 import { getCartProducts } from './cartRedux';
 import updateCurrentProductAmount from './reduxUtils/updateCurrentProductAmount';
 /* selectors */
 export const getProduct = ({ currentProduct }) => currentProduct.data;
+export const getIsLoading = ({ currentProduct }) => currentProduct.loading.active;
 
 /* action name creator */
 const reducerName = 'currentProduct';
@@ -28,6 +28,7 @@ export const resetCurrentProduct = () => ({ type: RESET_CURRENT_PRODUCT });
 
 export const fetchProduct = (productId) => {
   return async (dispatch, getState) => {
+    dispatch(fetchStarted());
     try {
       const url = `${api.url}/${api.endpoints.products}/${productId}`;
       const result = await axios.get(url);
