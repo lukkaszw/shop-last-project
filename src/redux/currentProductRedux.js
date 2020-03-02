@@ -1,3 +1,5 @@
+import axios from 'axios';
+import api from '../config/api';
 import products from '../demo/secondaryProducts';
 import { getCartProducts } from './cartRedux';
 import updateCurrentProductAmount from './reduxUtils/updateCurrentProductAmount';
@@ -25,13 +27,21 @@ export const resetCurrentProduct = () => ({ type: RESET_CURRENT_PRODUCT });
 
 
 export const fetchProduct = (productId) => {
-  return (dispatch, getState) => {
-    dispatch(fetchStarted());
-    const cartProducts = getCartProducts(getState());
-    const product = products.find(product => product._id === productId);
-    const productAfterUpdate = updateCurrentProductAmount({...product}, cartProducts);
-    dispatch(fetchSuccess(productAfterUpdate));
-  }
+  return async (dispatch, getState) => {
+    try {
+      const url = `${api.url}/${api.endpoints.products}/${productId}`;
+      const result = await axios.get(url);
+      const cartProducts = getCartProducts(getState());
+      if(result.data) {
+        const productAfterUpdate = updateCurrentProductAmount(result.data, cartProducts);
+        dispatch(fetchSuccess(productAfterUpdate));
+        return;
+      }
+      dispatch(fetchSuccess(null));
+    } catch (error) {
+      dispatch(fetchError());
+    }
+  } 
 }
 
 const currentProductReducer = (statePart = [], action = {}) => {
