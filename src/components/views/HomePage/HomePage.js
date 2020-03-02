@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import ProductCart from '../../common/ProductCart/ProductCart';
+import Pagination from '../../features/Pagination/Pagination.container';
 import PropTypes from 'prop-types';
-import { maxProdsOnPage } from '../../../config/products';
 
 import styles from './HomePage.module.scss';
 
 class HomePage extends Component {
 
   componentDidMount() {
-    const page = this.props.page;
+    if(this.props.products.length === 0) {
+      this.fetchData();
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.page !== prevProps.page) {
+      this.fetchData();
+    }
+  }
+
+  fetchData = () => {
+    const { page, maxProdsOnPage } = this.props;
     const limit = maxProdsOnPage;
     const skip = (page - 1) * maxProdsOnPage;
     this.props.fetchProducts({ limit, skip });
@@ -31,10 +43,16 @@ class HomePage extends Component {
   }
 
   render() { 
+    const { renderProducts } = this;
+
     return ( 
-      <section className={styles.root}>
-        {this.renderProducts()}
-      </section>
+      <div className={styles.root}>
+        <Pagination />
+        <section className={styles.products}>
+          {renderProducts()}
+        </section>
+      </div>
+
      );
   }
 }
@@ -43,6 +61,7 @@ HomePage.propTypes = {
   products: PropTypes.array,
   fetchProducts: PropTypes.func,
   page: PropTypes.number,
+  allProdsAmount: PropTypes.number,
   changePage: PropTypes.func,
 };
 

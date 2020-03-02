@@ -7,7 +7,7 @@ import initialState from './initialState';
 import productReducer from './productRedux';
 import currentProductReducer from './currentProductRedux';
 import cartReducer from './cartRedux';
-import queriesProductsReducer from './currentProductRedux';
+import queriesProductsReducer from './queriesProductsRedux';
 
 // define reducers
 const reducers = {

@@ -1,0 +1,593 @@
+[
+  {
+    "title": "Age of empires II",
+    "categories": ["RTS", "strategy"],
+    "amount": 0,
+    "imageUrl": "/images/age2.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/age2-g-1.jpg",
+        "minImg": "/images/gallery/age2-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/age2-g-2.jpg",
+        "minImg": "/images/gallery/age2-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/age2-g-3.jpg",
+        "minImg": "/images/gallery/age2-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/age2-g-4.jpg",
+       "minImg": "/images/gallery/age2-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": null,
+    "price": 59.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Anno 1800",
+    "categories": ["RTS", "strategy"],
+    "producent": "Infinity Ward",
+    "amount": 10,
+    "imageUrl": "/images/anno-1800.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/anno-1800-g-1.jpg",
+        "minImg": "/images/gallery/anno-1800-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/anno-1800-g-2.jpg",
+        "minImg": "/images/gallery/anno-1800-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/anno-1800-g-3.jpg",
+        "minImg": "/images/gallery/anno-1800-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/anno-1800-g-4.jpg",
+        "minImg": "/images/gallery/anno-1800-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": 109,
+    "price": 89,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Anno 2205",
+    "categories": ["RTS", "strategy"],
+    "amount": 2,
+    "imageUrl": "/images/anno-2205.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/anno2205-g-1.jpg",
+        "minImg": "/images/gallery/anno2205-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/anno2205-g-2.jpg",
+        "minImg": "/images/gallery/anno2205-g-2_min.jpg"
+      },
+      {
+
+        "img": "/images/gallery/anno2205-g-3.jpg",
+        "minImg": "/images/gallery/anno2205-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/anno2205-g-4.jpg",
+        "minImg": "/images/gallery/anno2205-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": null,
+    "price": 49,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Assasin's Creed: Odyssey",
+    "categories": ["adventure", "cRPG"],
+    "amount": 15,
+    "imageUrl": "/images/assasin-odyssey.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/assasin-odyssey-g-1.jpg",
+        "minImg": "/images/gallery/assasin-odyssey-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/assasin-odyssey-g-2.jpg",
+        "minImg": "/images/gallery/assasin-odyssey-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/assasin-odyssey-g-3.jpg",
+        "minImg": "/images/gallery/assasin-odyssey-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/assasin-odyssey-g-4.jpg",
+        "minImg": "/images/gallery/assasin-odyssey-g-4_min.jpg"
+      } 
+    ],
+    "variant": "box",
+    "oldPrice": 189,
+    "price": 129,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Assasin's Creed: Origin",
+    "categories": ["adventure", "cRPG"],
+    "amount": 7,
+    "imageUrl": "/images/assasin-origin.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/assasin-origin-g-1.jpg",
+        "minImg": "/images/gallery/assasin-origin-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/assasin-origin-g-2.jpg",
+        "minImg": "/images/gallery/assasin-origin-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/assasin-origin-g-3.jpg",
+        "minImg": "/images/gallery/assasin-origin-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/assasin-origin-g-4.jpg",
+        "minImg": "/images/gallery/assasin-origin-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": 129,
+    "price": 89.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Battlefield 1",
+    "categories": ["FPS", "shooter"],
+    "amount": 12,
+    "imageUrl": "/images/battlefield-1.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/battlefield-1-g-1.jpg",
+        "minImg": "/images/gallery/battlefield-1-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/battlefield-1-g-2.jpg",
+        "minImg": "/images/gallery/battlefield-1-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/battlefield-1-g-3.jpg",
+        "minImg": "/images/gallery/battlefield-1-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/battlefield-1-g-4.jpg",
+        "minImg": "/images/gallery/battlefield-1-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": 100,
+    "price": 69,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Battlefield V",
+    "categories": ["FPS", "shooter"],
+    "amount": 21,
+    "imageUrl": "/images/battlefield-V.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/battlefield-5-g-1.jpg",
+        "minImg": "/images/gallery/battlefield-5-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/battlefield-5-g-2.jpg",
+        "minImg": "/images/gallery/battlefield-5-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/battlefield-5-g-3.jpg",
+        "minImg": "/images/gallery/battlefield-5-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/battlefield-5-g-4.jpg",
+        "minImg": "/images/gallery/battlefield-5-g-4_min.jpg"
+      } 
+    ],
+    "variant": "box",
+    "oldPrice": 189.99,
+    "price": 140,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Call of Duty: Modern Warfare",
+    "categories": ["FPS", "shooter"],
+    "amount": 1,
+    "imageUrl": "/images/call-of-duty.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/call-of-duty-mw-g-1.jpg",
+        "minImg": "/images/gallery/call-of-duty-mw-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/call-of-duty-mw-g-2.jpg",
+        "minImg": "/images/gallery/call-of-duty-mw-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/call-of-duty-mw-g-3.jpg",
+        "minImg": "/images/gallery/call-of-duty-mw-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/call-of-duty-mw-g-4.jpg",
+        "minImg": "/images/gallery/call-of-duty-mw-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": null,
+    "price": 99.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Divinity II: Original Sin",
+    "categories": ["cRPG", "izometric"],
+    "amount": 6,
+    "imageUrl": "/images/divinity-os-2-de.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/divinity2-os-g-1.jpg",
+        "minImg": "/images/gallery/divinity2-os-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/divinity2-os-g-2.jpg",
+        "minImg": "/images/gallery/divinity2-os-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/divinity2-os-g-3.jpg",
+        "minImg": "/images/gallery/divinity2-os-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/divinity2-os-g-4.jpg",
+        "minImg": "/images/gallery/divinity2-os-g-4_min.jpg"
+      } 
+    ],
+    "variant": "key",
+    "oldPrice": null,
+    "price": 69.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Elex",
+    "categories": ["cRPG", "adventure"],
+    "amount": 7,
+    "imageUrl": "/images/elex.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/elex-g-1.jpg",
+        "minImg": "/images/gallery/elex-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/elex-g-2.jpg",
+        "minImg": "/images/gallery/elex-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/elex-g-3.jpg",
+        "minImg": "/images/gallery/elex-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/elex-g-4.jpg",
+        "minImg": "/images/gallery/elex-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": null,
+    "price": 119,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "F1 2019",
+    "categories": ["race", "sport"],
+    "amount": 6,
+    "imageUrl": "/images/f12019.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/f12019-g-1.jpg",
+        "minImg": "/images/gallery/f12019-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/f12019-g-2.jpg",
+        "minImg": "/images/gallery/f12019-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/f12019-g-3.jpg",
+        "minImg": "/images/gallery/f12019-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/f12019-g-4.jpg",
+        "minImg": "/images/gallery/f12019-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": 229.99,
+    "price": 199.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Far Cry 5",
+    "amount": 9,
+    "categories": ["FPS", "shooter"],
+    "imageUrl": "/images/far-cry-5.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/far-cry-5-g-1.jpg",
+        "minImg": "/images/gallery/far-cry-5-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/far-cry-5-g-2.jpg",
+        "minImg": "/images/gallery/far-cry-5-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/far-cry-5-g-3.jpg",
+        "minImg": "/images/gallery/far-cry-5-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/far-cry-5-g-4.jpg",
+        "minImg": "/images/gallery/far-cry-5-g-4_min.jpg"
+      } 
+    ],
+    "variant": "box",
+    "oldPrice": 189.99,
+    "price": 109.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Fifa 20",
+    "categories": ["sport"],
+    "amount": 45,
+    "imageUrl": "/images/fifa20.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/fifa20-g-1.jpg",
+        "minImg": "/images/gallery/fifa20-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/fifa20-g-2.jpg",
+        "minImg": "/images/gallery/fifa20-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/fifa20-g-3.jpg",
+        "minImg": "/images/gallery/fifa20-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/fifa20-g-4.jpg",
+        "minImg": "/images/gallery/fifa20-g-4_min.jpg"
+      } 
+    ],
+    "variant": "box",
+    "oldPrice": null,
+    "price": 149.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Football Manager 2020",
+    "categories": ["sport"],
+    "amount": 8,
+    "imageUrl": "/images/fm2020.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/fm2020-g-1.jpg",
+        "minImg": "/images/gallery/fm2020-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/fm2020-g-2.jpg",
+        "minImg": "/images/gallery/fm2020-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/fm2020-g-3.jpg",
+        "minImg": "/images/gallery/fm2020-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/fm2020-g-4.jpg",
+        "minImg": "/images/gallery/fm2020-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": null,
+    "price": 169.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Forza Street",
+    "categories": ["race", "sport"],
+    "amount": 4,
+    "imageUrl": "/images/forzaStreet.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/forza-street-g-1.jpg",
+        "minImg": "/images/gallery/forza-street-g-1_min.jpg"
+      },
+      {
+        "img": "/images/gallery/forza-street-g-2.jpg",
+        "minImg": "/images/gallery/forza-street-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/forza-street-g-3.jpg",
+        "minImg": "/images/gallery/forza-street-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/forza-street-g-4.jpg",
+        "minImg": "/images/gallery/forza-street-g-4_min.jpg"
+      } 
+    ],
+    "variant": "box",
+    "oldPrice": null,
+    "price": 219.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Gears 5",
+    "categories": ["TPP", "shooter"],
+    "amount": 16,
+    "imageUrl": "/images/gears5.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/gears5-g-1.jpg",
+        "minImg": "/images/gallery/gears5-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/gears5-g-2.jpg",
+        "minImg": "/images/gallery/gears5-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/gears5-g-3.jpg",
+        "minImg": "/images/gallery/gears5-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/gears5-g-4.jpg",
+        "minImg": "/images/gallery/gears5-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": null,
+    "price": 99.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Grid",
+    "categories": ["race", "sport"],
+    "amount": 2,
+    "imageUrl": "/images/grid.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/grid-g-1.jpg",
+        "minImg": "/images/gallery/grid-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/grid-g-2.jpg",
+        "minImg": "/images/gallery/grid-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/grid-g-3.jpg",
+        "minImg": "/images/gallery/grid-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/grid-g-4.jpg",
+        "minImg": "/images/gallery/grid-g-4_min.jpg"
+      } 
+    ],
+    "variant": "box",
+    "oldPrice": 100,
+    "price": 75,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Kingdom Come Deliverance",
+    "categories": ["cRPG"],
+    "amount": 5,
+    "imageUrl": "/images/kingdomComeDel.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/kingdome-come-g-1.jpg",
+        "minImg": "/images/gallery/kingdome-come-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/kingdome-come-g-2.jpg",
+        "minImg": "/images/gallery/kingdome-come-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/kingdome-come-g-3.jpg",
+        "minImg": "/images/gallery/kingdome-come-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/kingdome-come-g-4.jpg",
+        "minImg": "/images/gallery/kingdome-come-g-4_min.jpg"
+      } 
+    ],
+    "variant": "box",
+    "oldPrice": 189.99,
+    "price": 109.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Moto GP 19",
+    "categories": ["race", "sport"],
+    "amount": 3,
+    "imageUrl": "/images/moto-gp-19.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/motoGP19-g-1.jpg",
+        "minImg": "/images/gallery/motoGP19-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/motoGP19-g-2.jpg",
+        "minImg": "/images/gallery/motoGP19-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/motoGP19-g-3.jpg",
+        "minImg": "/images/gallery/motoGP19-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/motoGP19-g-4.jpg",
+        "minImg": "/images/gallery/motoGP19-g-4_min.jpg"
+      } 
+    ],
+    "variant": "box",
+    "oldPrice": 169.99,
+    "price": 129.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Pro Evolution Soccer 2020",
+    "categories": ["sport"],
+    "amount": 33,
+    "imageUrl": "/images/pes2020.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/pes2020-g-1.jpg",
+        "minImg": "/images/gallery/pes2020-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/pes2020-g-2.jpg",
+        "minImg": "/images/gallery/pes2020-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/pes2020-g-3.jpg",
+        "minImg": "/images/gallery/pes2020-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/pes2020-g-4.jpg",
+        "minImg": "/images/gallery/pes2020-g-4_min.jpg"
+      } 
+    ],
+    "variant": "box",
+    "oldPrice": 139.99,
+    "price": 99.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  },
+  {
+    "title": "Street Fighter Champions Edition",
+    "categories": ["fight"],
+    "amount": 5,
+    "imageUrl": "/images/street-fighter-ch-e.jpg",
+    "gallery": [
+      {
+        "img": "/images/gallery/street-fighter-che-g-1.jpg",
+        "minImg": "/images/gallery/street-fighter-che-g-1_min.jpg"
+      }, 
+      {
+        "img": "/images/gallery/street-fighter-che-g-2.jpg",
+        "minImg": "/images/gallery/street-fighter-che-g-2_min.jpg"
+      },
+      {
+        "img": "/images/gallery/street-fighter-che-g-3.jpg",
+        "minImg": "/images/gallery/street-fighter-che-g-3_min.jpg"
+      },
+      {
+        "img": "/images/gallery/street-fighter-che-g-4.jpg",
+        "minImg": "/images/gallery/street-fighter-che-g-4_min.jpg"
+      }
+    ],
+    "variant": "box",
+    "oldPrice": null,
+    "price": 89.99,
+    "description": "Lorem ipsum dolor sit amet, an brute similique instructior pri, duo fugit democritum ea. Cu copiosae eloquentiam qui, has posse quidam te. Id nec ignota ornatus omnesque, te duo partem tractatos petentium, ex magna definitionem eam. Eu meliore placerat mel, probo definiebas no duo, at mandamus definitionem vel. Sea id nostro disputando comprehensam, id mei alii magna noluisse."
+  }
+]
+
