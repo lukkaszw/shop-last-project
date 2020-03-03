@@ -23,7 +23,7 @@ export const removeFromCart = (payload) => ({ payload, type: REMOVE_FROM_CART })
 export const increaseAmount = (payload) => ({ payload, type: INCREASE_AMOUNT });
 export const decreaseAmount = (payload) => ({ payload, type: DECREASE_AMOUNT });
 export const addNoteToProduct = (payload) => ({ payload, type: ADD_NOTE });
-export const resetCart = () => ({ type: RESET_CART })
+export const resetCart = () => ({ type: RESET_CART });
 
 const cartReducer = (statePart = [], action = {}) => {
   switch (action.type) {

@@ -2,6 +2,8 @@ import React, { Component, createRef } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import axios from 'axios';
+import api from '../../../config/api';
 
 import { validateOrderForm } from '../../../utils/validators';
 import styles from './OrderForm.module.scss';
@@ -79,10 +81,10 @@ class OrderForm extends Component {
     }));
   }
 
-  sendOrderHandler = (e) => {
+  submitFormHandler = (e) => {
     e.preventDefault();
-    const { policyCheck, shopTermsCheck } = this;
-    const { resetCart } = this.props;
+    const { policyCheck, shopTermsCheck, sendOrderHandler } = this;
+  
     const formOptions = {...this.state};
     delete formOptions.errors;
     const errors = validateOrderForm(formOptions);
@@ -101,9 +103,36 @@ class OrderForm extends Component {
       return;
     }
 
-    console.log('Send order');
+    this.sendOrderHandler(formOptions);
+  }
 
-    resetCart();
+  sendOrderHandler = (userOptions) => {
+    const totalPrice = this.props.totalPrice;
+    const user = userOptions;
+    const products = this.props.cartProducts.map(product => ({
+      productId: product._id,
+      title: product.title,
+      amount: product.amount,
+      price: product.price,
+    }));
+
+    const { resetCart } = this.props;
+
+    const url = `${api.url}/${api.endpoints.orders}`;
+
+    axios
+      .post(url, {
+        user,
+        totalPrice,
+        products,
+      })
+      .then(response => {
+        console.log(response);
+        resetCart();
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   resetCheckboxError = (fieldId) => {
@@ -119,12 +148,12 @@ class OrderForm extends Component {
   render() { 
     
     const { name, email, phone, country, address, postCode, city, errors  } = this.state;
-    const { inputChangeHandler, sendOrderHandler, inputPhoneHandler, inputPostCodeHandler, resetCheckboxError } = this;
+    const { inputChangeHandler, submitFormHandler, inputPhoneHandler, inputPostCodeHandler, resetCheckboxError } = this;
 
     return ( 
       <form
         className={styles.root}
-        onSubmit={sendOrderHandler}
+        onSubmit={submitFormHandler}
       >
         <div className={clsx([styles.formItem, errors.includes('name') && styles.error])}>
           <label
