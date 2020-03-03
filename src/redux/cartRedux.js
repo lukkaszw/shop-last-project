@@ -1,3 +1,5 @@
+import roundPrice from '../utils/roundPrice';
+
 /* selectors */
 export const getCartProducts = ({ cart }) => cart.products;
 export const getTotalAmount = ({ cart }) => cart.totalAmount;
@@ -40,7 +42,7 @@ const cartReducer = (statePart = [], action = {}) => {
         ...statePart,
         products: newProducts,
         totalAmount: statePart.totalAmount + product.amount,
-        totalPrice: statePart.totalPrice + (product.amount * product.price),
+        totalPrice: roundPrice(statePart.totalPrice + (product.amount * product.price)),
       }
     }
     case REMOVE_FROM_CART: {
@@ -51,7 +53,7 @@ const cartReducer = (statePart = [], action = {}) => {
       return {
         ...statePart,
         products: statePart.products.filter(product => product._id !== prodId),
-        totalPrice: statePart.totalPrice - priceToRemove,
+        totalPrice: roundPrice(statePart.totalPrice - priceToRemove),
         totalAmount: statePart.totalAmount - amountToRemove,
       }
     }
@@ -65,7 +67,7 @@ const cartReducer = (statePart = [], action = {}) => {
             }
             return product;
           }),
-        totalPrice: statePart.totalPrice + productToUpdate.price,
+        totalPrice: roundPrice(statePart.totalPrice + productToUpdate.price),
         totalAmount: statePart.totalAmount + 1,
       }
     }
@@ -79,7 +81,7 @@ const cartReducer = (statePart = [], action = {}) => {
             }
             return product;
           }),
-        totalPrice: statePart.totalPrice - productToUpdate.price,
+        totalPrice: roundPrice(statePart.totalPrice - productToUpdate.price),
         totalAmount: statePart.totalAmount - 1,
       }
     }
