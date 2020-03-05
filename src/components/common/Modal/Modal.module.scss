@@ -1,0 +1,60 @@
+.root {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  min-width: 320px;
+  max-width: 90%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #777;
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .message {
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    padding: 5px 12px;
+    background-color: #444;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: .2s;
+    
+    &:hover {
+      background-color: darken(#444, 20);
+    }
+  }
+
+}
+
+.root.error {
+  
+  .title {
+    color: rgb(200, 97, 97);
+  }
+}
+
+
+.root.success {
+  
+  .title {
+    color: #62b862;
+  }
+
+  .btn {
+    background-color: #62b862;
+
+    &:hover {
+      background-color: darken(#62b862, 20);
+    }
+  }
+}

@@ -87,6 +87,7 @@ class OrderForm extends Component {
   
     const formOptions = {...this.state};
     delete formOptions.errors;
+
     const errors = validateOrderForm(formOptions);
     if(!policyCheck.current.checked) {
       errors.push('privacy');
@@ -103,22 +104,28 @@ class OrderForm extends Component {
       return;
     }
 
-    this.sendOrderHandler(formOptions);
+    sendOrderHandler(formOptions);
   }
 
   sendOrderHandler = (userOptions) => {
-    const totalPrice = this.props.totalPrice;
+    const { totalPrice, startSending, setError, setSuccess, resetCart  } = this.props;
     const user = userOptions;
-    const products = this.props.cartProducts.map(product => ({
-      productId: product._id,
-      title: product.title,
-      amount: product.amount,
-      price: product.price,
-    }));
-
-    const { resetCart } = this.props;
+    const products = this.props.cartProducts.map(product => {
+      const orderProduct = {
+        productId: product._id,
+        title: product.title,
+        amount: product.amount,
+        price: product.price,
+      }
+      if(product.note) {
+        orderProduct.note = product.note;
+      }
+      return orderProduct;
+    });
 
     const url = `${api.url}/${api.endpoints.orders}`;
+
+    startSending();
 
     axios
       .post(url, {
@@ -127,11 +134,15 @@ class OrderForm extends Component {
         products,
       })
       .then(response => {
-        console.log(response);
-        resetCart();
+        if(response.statusText === 'OK') {
+          resetCart();
+          setSuccess();
+        } else {
+          setError();
+        }
       })
       .catch(error => {
-        console.log(error);
+        setError(error.message)
       })
   }
 
@@ -306,6 +317,9 @@ class OrderForm extends Component {
 OrderForm.propTypes = {
   cartProducts: PropTypes.array,
   totalPrice: PropTypes.number,
+  startSending: PropTypes.func,
+  setSuccess: PropTypes.func,
+  setError: PropTypes.func,
 };
  
 export default OrderForm;
