@@ -7,21 +7,24 @@ import NotFound from './components/views/NotFound/NotFound';
 import Order from './components/views/Order/Order.container';
 import ProductView from './components/views/ProductView/ProductView.container';
 import Cart from './components/views/Cart/Cart.container';
+import CartInStorage from './components/features/CartInStorage/CartInStorage.container';
 
 import './styles/global.scss';
 
 function App() {
   return (
     <BrowserRouter>
-      <MainLayout>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/product/:id" component={ProductView} />
-          <Route exact path="/cart" component={Cart} />
-          <Route exact path="/order" component={Order} />
-          <Route path='*' component={NotFound} />
-        </Switch>
-      </MainLayout>
+      <CartInStorage>
+        <MainLayout>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/product/:id" component={ProductView} />
+            <Route exact path="/cart" component={Cart} />
+            <Route exact path="/order" component={Order} />
+            <Route path='*' component={NotFound} />
+          </Switch>
+        </MainLayout>
+      </CartInStorage>
     </BrowserRouter>
   );
 }

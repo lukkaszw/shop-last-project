@@ -1,6 +1,7 @@
 import roundPrice from '../utils/roundPrice';
 
 /* selectors */
+export const getCart = ({ cart }) => cart;
 export const getCartProducts = ({ cart }) => cart.products;
 export const getTotalAmount = ({ cart }) => cart.totalAmount;
 export const getTotalPrice = ({ cart }) => cart.totalPrice;
@@ -16,6 +17,7 @@ const INCREASE_AMOUNT = createActionName('INCREASE_AMOUNT');
 const DECREASE_AMOUNT = createActionName('DECREASE_AMOUNT');
 const ADD_NOTE = createActionName('ADD_NOTE');
 const RESET_CART = createActionName('RESET_CART');
+const FETCH_CART_FROM_STORAGE = createActionName('FETCH_CART_FROM_STORAGE');
 
 /* action creators */
 export const addToCart = (payload) => ({ payload, type: ADD_TO_CART });
@@ -24,9 +26,15 @@ export const increaseAmount = (payload) => ({ payload, type: INCREASE_AMOUNT });
 export const decreaseAmount = (payload) => ({ payload, type: DECREASE_AMOUNT });
 export const addNoteToProduct = (payload) => ({ payload, type: ADD_NOTE });
 export const resetCart = () => ({ type: RESET_CART });
+export const fetchCartFromStorage = (payload) => ({ payload, type: FETCH_CART_FROM_STORAGE })
 
 const cartReducer = (statePart = [], action = {}) => {
   switch (action.type) {
+    case FETCH_CART_FROM_STORAGE: {
+      return {
+        ...action.payload
+      }
+    }
     case ADD_TO_CART: {
       const product = action.payload;
       const existProductIndex = statePart.products
