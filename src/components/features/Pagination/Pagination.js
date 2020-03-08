@@ -13,7 +13,7 @@ class Pagination extends Component {
       <div className={styles.root}>
         <button 
             onClick={goPrevPageAction}
-            className={styles.btn}
+            className='btnNav'
             disabled={page === 1 || isLoading}
           >
             Prev
@@ -21,7 +21,7 @@ class Pagination extends Component {
           <span className={styles.pages}>{page}/{maxPageNr}</span>
           <button 
             onClick={goNextPageAction}
-            className={styles.btn}
+            className='btnNav'
             disabled={page === maxPageNr || isLoading}
           >
             Next

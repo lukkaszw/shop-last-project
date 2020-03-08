@@ -97,32 +97,5 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    .btn {
-      background-color: #609b03;
-      color: #fff;
-      border: none;
-      padding: 5px 20px;
-      font-size: 17px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: .1s;
-
-      &:hover, &:active {
-        background-color: darken(#609b03, 10);
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      &:active:not(:disabled) {
-        box-shadow: 0 0 9px lighten(#609b03, 30);
-      }
-
-      &:disabled {
-        background-color: #555;
-      }
-    }
   }
 }

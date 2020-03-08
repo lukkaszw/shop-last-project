@@ -299,15 +299,19 @@ class OrderForm extends Component {
         </div>
         <p className={styles.required}>* - option required</p>
         <div className={styles.submit}>
-          <Link 
-            to='/cart'
-            className={clsx([styles.btn, styles.btn__cancel ])}
-          >
-            Cancel
-          </Link>
-          <button className={styles.btn}>
-            Confirm Order
-          </button>
+          <span className={styles.btn}>
+            <Link 
+              to='/cart'
+              className={clsx(['btn', 'btn__cancel' ])}
+            >
+              Cancel
+            </Link>
+          </span>
+          <span className={styles.btn}>
+            <button className='btn'>
+              Confirm Order
+            </button>
+          </span>
         </div>
       </form>
      );

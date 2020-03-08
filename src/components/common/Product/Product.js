@@ -96,7 +96,7 @@ const Product  = ({
               onSubmit={addToCart}
             >
               <button
-                className={styles.btn}
+                className='btn'
                 disabled={amount <= 0 || chosenAmount === 0}
               >
                 Add to cart

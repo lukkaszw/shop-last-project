@@ -27,13 +27,13 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, 
               setNoteApperance(true);
               noteTextEl.current.focus();
             }} 
-            className={clsx([styles.btn, styles.btn__note])}
+            className={clsx(['btnSmall', 'btnSmall__neutral'])}
           >
             Add note
           </button>
           <button 
             onClick={() => removeFromCart(_id)}
-            className={clsx([styles.btn, styles.btn__remove])}
+            className={clsx(['btnSmall', 'btnSmall__negative'])}
           >
             Delete
           </button>
@@ -58,7 +58,7 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, 
         <div className={styles.note_btns}>
           <button 
             onClick={() => setNoteApperance(false)}
-            className={clsx([styles.btn, styles.btn__remove])}
+            className={clsx(['btnSmall', 'btnSmall__negative'])}
           >
             Cancel
           </button>
@@ -67,7 +67,7 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, 
               addNoteToProduct(_id, noteText);
               setNoteApperance(false);
             }}
-            className={clsx([styles.btn, styles.btn__add])}
+            className={clsx(['btnSmall', 'btnSmall__positive'])}
           >
             Add
           </button>

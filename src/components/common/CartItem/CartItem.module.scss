@@ -17,48 +17,6 @@
     margin-top: 5px;
   }
 
-  .btn {
-    padding: 3px 0;
-    width: 60px;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: .2s;
-
-    &:focus {
-      outline: 1px solid transparent;
-    }
-
-
-
-    &__note {
-      background-color: #ff6600;
-      margin-right: 10px;
-
-      &:hover {
-        background-color: darken(#ff6600, 15);
-      }
-    }
-
-    &__remove {
-      background-color: #f00;
-
-      &:hover {
-        background-color: darken(#f00, 15);
-      }
-    }
-
-    &__add {
-      background-color: #6ba513;
-      margin-left: 10px;
-
-      &:hover {
-        background-color: darken(#6ba513, 15);
-      }
-    }
-  }
-
   .note {
     width: 100%;
     height: 0;
@@ -88,6 +46,5 @@
     &_btns {
       text-align: right;
     }
-  };
-
+  }
 }

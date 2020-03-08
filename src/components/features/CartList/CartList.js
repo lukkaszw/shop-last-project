@@ -32,7 +32,7 @@ const CartList = ({ cartProducts, totalPrice, removeFromCart, increaseAmount, de
       <div className={styles.confirm}>
         <Link 
           to="/order"
-          className={styles.btn}
+          className='btn'
         >
           Order now!
         </Link>

@@ -51,28 +51,6 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
-
-    .btn {
-      color: #fff;
-      background-color: #1b86e9;
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      transition: .2s;
-
-      &__next {
-        justify-self: flex-end;
-      }
-
-      &:focus, &:active {
-        outline: none;
-      }
-
-      &:hover {
-        background-color: darken(#1b86e9, 15);
-      }
-    }
   }
 
   @media (max-height: 600px) and (orientation: landscape) {

@@ -34,7 +34,7 @@ const PhotoModal = ({
           {
             showPrevBtn &&
               <button 
-                className={clsx([styles.btn, styles.btn__prev])}
+                className='btnNav'
                 onClick={prevAction}
               >
                 Prev
@@ -46,7 +46,7 @@ const PhotoModal = ({
           {
             showNextBtn &&
               <button 
-                className={clsx([styles.btn, styles.btn__next])}
+                className='btnNav'
                 onClick={nextAction}
               >
                 Next

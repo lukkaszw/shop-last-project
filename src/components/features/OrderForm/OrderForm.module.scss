@@ -90,50 +90,9 @@
     justify-content: center;
     align-items: center;
     margin-top: 40px;
-    
 
     .btn {
-      background-color: #609b03;
       margin: 0 10px;
-      color: #fff;
-      border: none;
-      padding: 5px 20px;
-      font-size: 17px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: .1s;
-
-      &.btn__cancel {
-        display: inline-block;
-        background-color: red;
-        text-decoration: none;
-        line-height: 20px;
-        vertical-align: center;
-
-        &:hover, &:active {
-          background-color: darken(red, 20);
-
-         &:active {
-            box-shadow: none;
-          }
-        }
-      }
-
-      &:hover, &:active {
-        background-color: darken(#609b03, 10);
-      }
-
-      &:focus {
-        outline: none;
-      }
-
-      &:active:not(:disabled) {
-        box-shadow: 0 0 9px lighten(#609b03, 30);
-      }
-
-      &:disabled {
-        background-color: #555;
-      }
     }
   }
 
