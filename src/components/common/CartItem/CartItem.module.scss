@@ -1,3 +1,4 @@
+@import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
 .root {
@@ -6,7 +7,7 @@
   .top {
     @include flex(space-between);
     padding: 5px 0;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid $border-cl;
   }
 
   .bottom {
@@ -35,9 +36,9 @@
       overflow: hidden;
       outline: none;
       resize: none;
-      color: #fff;
+      color: inherit;
       border: none;
-      background-color: #333;
+      background-color: $textarea-cl;
     }
 
     &_btns {

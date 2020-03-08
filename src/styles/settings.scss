@@ -1,8 +1,8 @@
 body {
   margin: 0;
-  background-color: #222;
+  background-color: $background-cl;
   font-family: 'Lato', sans-serif;
-  color: #fff;
+  color: $font-cl;
 }
 
 * {
@@ -28,9 +28,9 @@ body {
 }
 
 .btn {
-  background-color: #609b03;
+  background-color: $btn-positive-bgc;
   text-decoration: none;
-  color: #fff;
+  color: $btn-font-cl;
   border: none;
   padding: 5px 20px;
   font-size: 17px;
@@ -40,13 +40,13 @@ body {
 
   &.btn__cancel {
     display: inline-block;
-    background-color: red;
+    background-color: $btn-negative-bgc;
     text-decoration: none;
     line-height: 20px;
     vertical-align: center;
 
     &:hover, &:active {
-      background-color: darken(red, 20);
+      background-color: darken($btn-negative-bgc, 20);
 
      &:active {
         box-shadow: none;
@@ -55,7 +55,7 @@ body {
   }
 
   &:hover, &:active {
-    background-color: darken(#609b03, 10);
+    background-color: darken($btn-positive-bgc, 10);
   }
 
   &:focus {
@@ -63,18 +63,18 @@ body {
   }
 
   &:active:not(:disabled) {
-    box-shadow: 0 0 9px lighten(#609b03, 30);
+    box-shadow: 0 0 9px lighten($btn-positive-bgc, 30);
   }
 
   &:disabled {
-    background-color: #555;
+    background-color: $btn-disable-bgc;
   }
 }
 
 .btnSmall {
   padding: 3px 0;
   width: 60px;
-  color: #fff;
+  color: $btn-font-cl;
   border: none;
   border-radius: 3px;
   cursor: pointer;
@@ -85,28 +85,28 @@ body {
   }
 
   &__neutral {
-    background-color: #ff6600;
+    background-color: $btn-neutral-bgc;
     margin-right: 10px;
 
     &:hover {
-      background-color: darken(#ff6600, 15);
+      background-color: darken($btn-neutral-bgc, 15);
     }
   }
 
   &__negative {
-    background-color: #f00;
+    background-color: $btn-negative-bgc;
 
     &:hover {
-      background-color: darken(#f00, 15);
+      background-color: darken($btn-negative-bgc, 15);
     }
   }
 
   &__positive {
-    background-color: #6ba513;
+    background-color: $btn-positive-bgc;
     margin-left: 10px;
 
     &:hover {
-      background-color: darken(#6ba513, 15);
+      background-color: darken($btn-positive-bgc, 15);
     }
   }
 }
@@ -114,8 +114,8 @@ body {
 .btnNav {
   padding: 2px 5px;
   border-radius: 5px;
-  background-color: #0e7fb4;
-  color: #fff;
+  background-color: $btn-nav-bgc;
+  color: $btn-font-cl;
   border: none;
   cursor: pointer;
   transition: .2s;
@@ -125,10 +125,10 @@ body {
   }
 
   &:hover {
-    background-color: lighten(#0e7fb4, 15);
+    background-color: lighten($btn-nav-bgc, 15);
   }
 
   &:disabled {
-    background-color: #555;
+    background-color: $btn-disable-bgc;
   }
 }

@@ -1,3 +1,4 @@
+@import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
 .root {
@@ -57,7 +58,7 @@
     .promotion {
       display: block;
       position: relative;
-      background-color:  #609b03;
+      background-color:  $promo-cl;
       padding: 2px 20px 2px 5px;
 
       &::before {
@@ -68,7 +69,7 @@
         left: 100%;
         width: 20px;
         height: 20px;
-        background-color: #609b03;
+        background-color: $promo-cl;
         transform: translate(-50%, -50%) rotate(45deg);
       }
     }
@@ -76,18 +77,18 @@
     .oldPrice {
       display: inline-block;
       padding: 0 5px;
-      color: #921111;
+      color: $price-old-cl;
       text-decoration: line-through;
     }
 
     .price {
-      background-color: rgb(0, 132, 255);
+      background-color: $price-square-cl;
       padding:  4px 5px 4px 20px;
     }
   }
 
   .outOffStock {
-    color: #f00;
+    color: $out-off-stock-cl;
   }
 
   .form {

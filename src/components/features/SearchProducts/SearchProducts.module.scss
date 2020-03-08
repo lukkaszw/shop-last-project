@@ -1,12 +1,14 @@
+@import '../../../styles/variables.scss';
+
 .root {
   display: flex;
   
   .input {
     padding: 3px 5px;
     font-size: 16px;
-    background-color: #333;
+    background-color: $input-cl;
     border: none;
-    color: #fff;
+    color: $input-font-cl;
     transition: .2s;
 
     &:focus {
@@ -17,19 +19,20 @@
   
   .btn {
     font-size: 16px;
-    background-color: #ff4500;
-    color: #fff;
+    background-color: $btn-input-bgc;
+    color: $btn-font-cl;
     border: none;
     height: 28px;
     padding: 0 10px 0;
     cursor: pointer;
+    transition: .2s;
 
     &:focus {
       outline: 1px solid transparent;
     }
 
     &:hover {
-      background-color: #dd2200;
+      background-color: lighten($btn-input-bgc, 10);
     }
   }
 

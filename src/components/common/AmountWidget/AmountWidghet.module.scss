@@ -1,10 +1,12 @@
+@import '../../../styles/variables.scss';
+
 .root {
   display: flex;
 
   .btn {
     padding: 0 10px;
     border: none;
-    color: #fff;
+    color: $amount-font-cl;
     cursor: pointer;
     transition: .2s;
 
@@ -13,23 +15,23 @@
     }
 
     &__decrease {
-      background-color: #ffa500;
+      background-color: $amount-btn-decr-cl;
 
       &:hover {
-        background-color: darken(#ffa500, 10);
+        background-color: darken($amount-btn-decr-cl, 10);
       }
     }
 
     &__increase {
-      background-color: #0084ff;
+      background-color: $amount-btn-incr-cl;
 
       &:hover {
-        background-color: darken(#0084ff, 10);
+        background-color: darken($amount-btn-incr-cl, 10);
       }
     }
 
     &__decrease:disabled , &__increase:disabled {
-      background-color: #777;
+      background-color: $amount-btn-disable-cl;
     }
   }
 
@@ -40,9 +42,9 @@
     font-size: 17px;
     padding:  4px 10px;
     font-weight: bold;
-    color: #fff;
+    color: $amount-font-cl;
     text-align: center;
-    background-color: #333;
+    background-color: $amount-span-cl;
     border: none;
   }
 }

@@ -1,3 +1,4 @@
+@import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
 .root {
@@ -20,7 +21,7 @@
     &.error {
       
       .checkLabel {
-        color: #b33a3a;
+        color: $form-error-cl;
       }
     }
   }
@@ -46,11 +47,11 @@
       padding: 5px;
       outline: none;
       border: none;
-      color: #fff;
-      background-color: #333;
+      color: $input-font-cl;
+      background-color: $input-cl;
 
       &:focus {
-        box-shadow: 0 1px #00b7ff;
+        box-shadow: 0 1px $form-focus-cl;
       }
 
       &__big {
@@ -67,10 +68,10 @@
     }
 
     &.error {
-      color: #b33a3a;
+      color: $form-error-cl;
 
       .input {
-        box-shadow: 0 2px #b33a3a;
+        box-shadow: 0 2px $form-error-cl;
       }
     }
 

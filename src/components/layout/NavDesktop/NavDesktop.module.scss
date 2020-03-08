@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .root {
   
   .navList {
@@ -5,7 +7,7 @@
 
     .navList__link {
       display: inline-block;
-      color: #fff;
+      color: inherit;
       text-decoration: none;
       font-size: 14px;
       padding: 16px 12px 12px;
@@ -13,7 +15,7 @@
       transition: .2s;
 
       &:hover, &.active {
-        box-shadow: 0 4px 0 #3e69f6;
+        box-shadow: 0 4px 0 $nav-boxsh-cl;
       }
     }
   }

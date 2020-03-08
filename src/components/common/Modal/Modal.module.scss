@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .root {
   position: fixed;
   top: 40%;
@@ -8,7 +10,7 @@
   padding: 20px;
   border-radius: 5px;
   text-align: center;
-  background-color: #777;
+  background-color: $modal-cl;
 
   .title {
     margin-bottom: 20px;
@@ -20,8 +22,8 @@
 
   .btn {
     padding: 5px 12px;
-    background-color: #444;
-    color: #fff;
+    background-color: $modal-btn-cl;
+    color: $modal-font-cl;
     border-radius: 5px;
     text-decoration: none;
     border: none;
@@ -30,7 +32,7 @@
     transition: .2s;
     
     &:hover {
-      background-color: darken(#444, 20);
+      background-color: darken($modal-btn-cl, 20);
     }
   }
 
@@ -39,7 +41,7 @@
 .root.error {
   
   .title {
-    color: rgb(200, 97, 97);
+    color: $modal-errror-cl;
   }
 }
 
@@ -47,14 +49,14 @@
 .root.success {
   
   .title {
-    color: #62b862;
+    color: $modal-success-cl;
   }
 
   .btn {
-    background-color: #62b862;
+    background-color: $modal-success-cl;
 
     &:hover {
-      background-color: darken(#62b862, 20);
+      background-color: darken($modal-success-cl, 20);
     }
   }
 }

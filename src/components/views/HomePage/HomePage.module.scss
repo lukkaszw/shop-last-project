@@ -9,7 +9,6 @@
 
   .products {
     @include flex(space-between, flex-start);
-    color: #fff;
   }
 
   .loader {

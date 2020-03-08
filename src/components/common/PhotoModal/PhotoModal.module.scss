@@ -1,3 +1,4 @@
+@import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
 .root {
@@ -7,7 +8,7 @@
   left: 50%;
   width: 1024px;
   max-width: 95%;
-  background-color: #000;
+  background-color: $photo-modal-cl;
   transform: translate(-50%, -50%);
 
   .photoWrapper {
@@ -27,13 +28,13 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    color: #7a0909;
+    color: $close-icon-cl;
     cursor: pointer;
     font-size: 36px;
     transition: .2s;
 
     &:hover {
-      color: #ff0000;
+      color: lighten($close-icon-cl, 20);
     }
   }
 

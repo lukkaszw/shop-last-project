@@ -1,8 +1,8 @@
+@import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
 .root {
-  background-color: #333;
-  color: #fff;
+  background-color: $header-cl;
   padding-bottom: 4px;
 
   .headerNav {

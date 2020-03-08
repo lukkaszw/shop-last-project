@@ -1,9 +1,10 @@
+@import '../../../styles/variables.scss';
 @import '../../../styles/mixins.scss';
 
 .root {
-  background-color: #111;
+  background-color: $footer-cl;
   text-align: center;
-  color: #aaa;
+  color: $footer-font-cl;
   padding: 20px;
 
   .categories {
@@ -38,9 +39,9 @@
     &__input {
       padding: 3px 5px;
       font-size: 16px;
-      background-color: #333;
+      background-color: lighten($footer-cl , 15);
       border: none;
-      color: #fff;
+      color: lighten($footer-font-cl, 20);
       transition: .2s;
 
       &:focus {
@@ -50,19 +51,20 @@
 
     &__btn {
       font-size: 20px;
-      background-color: #ff4500;
-      color: #fff;
+      background-color: $btn-input-bgc;
+      color: $btn-font-cl;
       border: none;
       height: 28px;
       padding: 0 10px 0;
       cursor: pointer;
+      transition: .2s;
 
       &:focus {
         outline: 1px solid transparent;
       }
 
       &:hover {
-        background-color: #dd2200;
+        background-color: lighten($btn-input-bgc, 10);
       }
     }
   }
@@ -78,21 +80,21 @@
       height: 50px;
       font-size: 18px;
       border-radius: 50%;
-      color: #fff;
-      background-color: #222;
+      color: $btn-font-cl;
+      background-color: lighten($footer-cl, 8);
       transition: .2s;
     }
 
     &__twitter:hover {
-      background-color: #1DA1F2;
+      background-color: $twitter-cl;
     }
 
     &__youtube:hover {
-      background-color: #c4302b;
+      background-color: $youtube-cl;
     }
 
     &__facebook:hover {
-      background-color: #4267B2;
+      background-color: $facebook-cl;
     }
   }
 }
