@@ -20,8 +20,8 @@ export const fetchStarted = payload => ({ payload, type: FETCH_START });
 export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
 export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 
-export const fetchProducts = ( query = { limit: undefined, skip: 0 }) => {
-  const { limit, skip } = query;
+export const fetchProducts = ( query = { limit: undefined, skip: 0, search: '' }) => {
+  const { limit, skip, search } = query;
   return async (dispatch) => {
     dispatch(fetchStarted());
     try {
@@ -30,6 +30,7 @@ export const fetchProducts = ( query = { limit: undefined, skip: 0 }) => {
         params: {
           limit,
           skip,
+          search,
         }
       });
       const products = result.data.products;

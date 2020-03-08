@@ -1,0 +1,36 @@
+.root {
+  display: flex;
+  
+  .input {
+    padding: 3px 5px;
+    font-size: 16px;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    transition: .2s;
+
+    &:focus {
+      outline: 1px solid transparent;
+    }
+  }
+
+  
+  .btn {
+    font-size: 16px;
+    background-color: #ff4500;
+    color: #fff;
+    border: none;
+    height: 28px;
+    padding: 0 10px 0;
+    cursor: pointer;
+
+    &:focus {
+      outline: 1px solid transparent;
+    }
+
+    &:hover {
+      background-color: #dd2200;
+    }
+  }
+
+}

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ProductCart from '../../common/ProductCart/ProductCart';
 import Pagination from '../../features/Pagination/Pagination.container';
 import Loader from '../../common/Loader/Loader';
+import SearchProducts from '../../features/SearchProducts/SearchProducts.container';
 import PropTypes from 'prop-types';
 
 import styles from './HomePage.module.scss';
@@ -15,16 +16,17 @@ class HomePage extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    if(this.props.page !== prevProps.page) {
+    if(this.props.page !== prevProps.page ||
+      this.props.searchText !== prevProps.searchText) {
       this.fetchData();
     }
   }
 
   fetchData = () => {
-    const { page, maxProdsOnPage } = this.props;
+    const { page, maxProdsOnPage, searchText } = this.props;
     const limit = maxProdsOnPage;
     const skip = (page - 1) * maxProdsOnPage;
-    this.props.fetchProducts({ limit, skip });
+    this.props.fetchProducts({ limit, skip, search: searchText });
   }
 
   renderProducts = () => {
@@ -38,7 +40,7 @@ class HomePage extends Component {
     }
 
     if(products.length === 0 && !isLoading) {
-      return <h3>No products available! Please try again later!</h3>
+      return <h3>No products found! Please try again later!</h3>
     }
 
     return (
@@ -62,7 +64,10 @@ class HomePage extends Component {
 
     return ( 
       <div className={styles.root}>
-        <Pagination />
+        <div className={styles.panel}>
+          <SearchProducts />
+          <Pagination />
+        </div>
         {renderProducts()}
       </div>
      );

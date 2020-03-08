@@ -15,7 +15,6 @@ class ProductView extends Component {
     const prodId = this.props.match.params.id;
     const { product, fetchProduct } = this.props;
     if(!product || product._id !== prodId) {
-      console.log('fetched');
       fetchProduct(prodId);
     }
   }

@@ -9,6 +9,7 @@ const initialState = {
   },
   queries: {
     page: 1,
+    searchText: '',
   },
   currentProduct: {
     data: null,

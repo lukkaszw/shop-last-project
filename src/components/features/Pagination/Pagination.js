@@ -7,8 +7,7 @@ import styles from './Pagination.module.scss';
 class Pagination extends Component {
 
   render() {
-    const { page, maxPageNr, goPrevPageAction, goNextPageAction, changePageAction, isLoading  } = this.props;
-    console.log(maxPageNr);
+    const { page, maxPageNr, goPrevPageAction, goNextPageAction, isLoading  } = this.props;
 
     return ( 
       <div className={styles.root}>
@@ -36,7 +35,6 @@ class Pagination extends Component {
 Pagination.propTypes = {
   page: PropTypes.number,
   maxPageNr: PropTypes.number,
-  changePageAction: PropTypes.func,
   goPrevPageAction: PropTypes.func,
   goNextPageAction: PropTypes.func,
 };

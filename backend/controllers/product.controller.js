@@ -9,6 +9,7 @@ const getProducts = async (req, res) => {
 
   let skip = 0;
   let limit;
+  const match = {};
 
   if(req.query.skip) {
     skip = parseInt(req.query.skip);
@@ -17,12 +18,19 @@ const getProducts = async (req, res) => {
   if(req.query.limit) {
     limit = parseInt(req.query.limit);
   }
+
+  if(req.query.search) {
+    const regexText = new RegExp(req.query.search, 'ig');
+    match.title = {
+      $regex: regexText,
+    }
+  }
  
 
   try {
-    const allDocsAmount =  await Product.find().countDocuments();
+    const allDocsAmount =  await Product.find(match).countDocuments();
     const products = await Product
-      .find()
+      .find(match)
       .sort({
         createdAt: -1,
       })
@@ -65,7 +73,6 @@ const getProduct = async (req, res) => {
 }
 
 const postProduct = async (req, res) => {
-  console.log('postProduct');
   const { title, variant, categories, oldPrice, price, amount, description, imageUrl, gallery  } = req.body;
   
   try {
@@ -80,7 +87,7 @@ const postProduct = async (req, res) => {
       imageUrl,
       gallery,
     });
-    console.log(product);
+    
     await product.save();
     res.status(201).json({
       product,
