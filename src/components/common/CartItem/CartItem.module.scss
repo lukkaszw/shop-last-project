@@ -1,19 +1,16 @@
+@import '../../../styles/mixins.scss';
+
 .root {
   margin: 20px 0;
   
-
   .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between);
     padding: 5px 0;
     border-bottom: 1px solid #444;
   }
 
   .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between);
     margin-top: 5px;
   }
 

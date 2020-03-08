@@ -1,12 +1,12 @@
+@import '../../../styles/mixins.scss';
+
 .root {
   background-color: #333;
   color: #fff;
   padding-bottom: 4px;
 
   .headerNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between);
     padding: 0 20px;
   }
 }

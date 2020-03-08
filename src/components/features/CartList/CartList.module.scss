@@ -1,7 +1,7 @@
+@import '../../../styles/mixins.scss';
+
 .root {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  @include flex(space-between, space-between, nowrap, column);
   min-height: 40vh;
 
   .list {

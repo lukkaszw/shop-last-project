@@ -1,16 +1,14 @@
+@import '../../../styles/mixins.scss';
+
 .root {
   padding: 20px;
 
   .panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between);
   }
 
   .products {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    @include flex(space-between, flex-start);
     color: #fff;
   }
 

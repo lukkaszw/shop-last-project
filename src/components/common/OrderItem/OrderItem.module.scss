@@ -1,3 +1,5 @@
+@import '../../../styles/mixins.scss';
+
 .root {
   border-bottom: 1px solid #444;
 
@@ -7,8 +9,7 @@
   }
   
   .data {
-    display: flex;
-    justify-content: center;
+    @include flex(center);
     width: 100%;
   
     .title {

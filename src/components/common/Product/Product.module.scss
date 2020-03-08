@@ -1,13 +1,13 @@
+@import '../../../styles/mixins.scss';
+
 .root {
   margin: 40px auto;
 
   .grid {
-    display: flex;
-    justify-content: space-around;
+    @include flex(space-around, space-between);
     width: 100%;
     max-width: 680px;
     margin: 0 auto;
-    flex-wrap: wrap;
   }
 
   .image, .info, .prices, .form {
@@ -35,12 +35,11 @@
 
   .centered {
     text-align: center;
+    width: 100%;
   }
   
   .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flex(space-between, flex-start, nowrap, column);
   }
 
   .description {
@@ -52,9 +51,7 @@
   }
 
   .prices {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between);
     text-align: right;
 
     .promotion {
@@ -94,8 +91,6 @@
   }
 
   .form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between);
   }
 }

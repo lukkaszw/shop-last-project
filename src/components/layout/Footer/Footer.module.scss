@@ -1,3 +1,5 @@
+@import '../../../styles/mixins.scss';
+
 .root {
   background-color: #111;
   text-align: center;
@@ -5,9 +7,7 @@
   padding: 20px;
 
   .categories {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    @include flex(center, flex-start);
 
     h3 {
       text-align: center;
@@ -68,15 +68,11 @@
   }
 
   .social {
-    display: flex;
+    @include flex(space-around);
     height: 90px;
-    justify-content: space-around;
-    align-items: center;
 
     &__icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex(center);
       min-width: 50px;
       max-width: 50px;
       height: 50px;
@@ -99,6 +95,4 @@
       background-color: #4267B2;
     }
   }
-
-
 }

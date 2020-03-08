@@ -1,10 +1,10 @@
+@import '../../../styles/mixins.scss';
+
 .root {
   margin: 60px 0;
 
   .list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    @include flex(center);
     list-style: none;
   }
 

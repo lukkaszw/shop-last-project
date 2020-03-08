@@ -1,10 +1,11 @@
+@import '../../../styles/mixins.scss';
+
 .root {
   margin: 20px 0;
 
   .regulations {
     margin-top: 10px;
-    display: flex;
-    align-items: center;
+    @include flex();
     font-size: 14px;
 
     .checkbox {
@@ -81,14 +82,11 @@
   }
 
   .smallWrapper {
-    display: flex;
-    align-items: center;
+    @include flex();
   }
 
   .submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center);
     margin-top: 40px;
 
     .btn {
