@@ -16,6 +16,10 @@ class Order extends Component {
     message: '',
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   setSending = () => {
     this.setState({
       isSending: true,

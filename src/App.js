@@ -8,22 +8,38 @@ import Order from './components/views/Order/Order.container';
 import ProductView from './components/views/ProductView/ProductView.container';
 import Cart from './components/views/Cart/Cart.container';
 import CartInStorage from './components/features/CartInStorage/CartInStorage.container';
+import {
+  TransitionGroup,
+  CSSTransition,
+} from 'react-transition-group';
 
 import './styles/global.scss';
 
 function App() {
   return (
     <BrowserRouter>
-      <CartInStorage>
+     
+        <CartInStorage>
         <MainLayout>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/product/:id" component={ProductView} />
-            <Route exact path="/cart" component={Cart} />
-            <Route exact path="/order" component={Order} />
-            <Route path='*' component={NotFound} />
-          </Switch>
-        </MainLayout>
+          <Route render={({location}) => (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                timeout={450}
+                classNames='fade'
+              >
+                <Switch location={location}>
+                  <Route exact path="/" component={HomePage} />
+                  <Route exact path="/product/:id" component={ProductView} />
+                  <Route exact path="/cart" component={Cart} />
+                  <Route exact path="/order" component={Order} />
+                  <Route path='*' component={NotFound} />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+           
+            )} />
+          </MainLayout>
       </CartInStorage>
     </BrowserRouter>
   );

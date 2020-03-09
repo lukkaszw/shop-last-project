@@ -9,6 +9,7 @@ import styles from './Cart.module.scss';
 class Cart extends Component {
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.resetCurrentProduct();
   }
 
