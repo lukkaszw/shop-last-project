@@ -8,7 +8,22 @@
   }
 
   .products {
-    @include flex(space-between, flex-start);
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 40px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 700px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 500px) {
+      grid-template-columns: repeat(1, 270px);
+    }
   }
 
   .loader {
@@ -20,7 +35,7 @@
     margin: 10px 0;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 500px) {
     .panel {
       flex-direction: column;
     }
