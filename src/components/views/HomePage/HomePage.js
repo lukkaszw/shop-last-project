@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import ProductCart from '../../common/ProductCart/ProductCart';
 import Pagination from '../../features/Pagination/Pagination.container';
 import Loader from '../../common/Loader/Loader';
@@ -8,6 +10,9 @@ import PropTypes from 'prop-types';
 import styles from './HomePage.module.scss';
 
 class HomePage extends Component {
+  state= {
+    isFiltersOpen: false,
+  }
 
   componentDidMount() {
     if(this.props.products.length === 0) {
@@ -27,6 +32,12 @@ class HomePage extends Component {
     const limit = maxProdsOnPage;
     const skip = (page - 1) * maxProdsOnPage;
     this.props.fetchProducts({ limit, skip, search: searchText });
+  }
+
+  openFiltersHandler = () => {
+    this.setState({
+      isFiltersOpen: true,
+    });
   }
 
   renderProducts = () => {
@@ -65,7 +76,21 @@ class HomePage extends Component {
     return ( 
       <div className={styles.root}>
         <div className={styles.panel}>
-          <SearchProducts />
+          <div className={styles.filters}>
+            <div className={styles.filters__item}>
+              <SearchProducts />
+            </div>
+            <div className={styles.filters__item}>
+              <button
+                className={styles.filter}
+              >
+                <FontAwesomeIcon
+                  className={styles.filter__icon}
+                  icon={faFilter} 
+                />
+              </button>
+            </div>
+          </div>
           <Pagination />
         </div>
         {renderProducts()}
