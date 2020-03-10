@@ -22,7 +22,7 @@ class Pagination extends Component {
           <button 
             onClick={goNextPageAction}
             className='btnNav'
-            disabled={page === maxPageNr || isLoading}
+            disabled={page >= maxPageNr || isLoading}
           >
             Next
           </button>
