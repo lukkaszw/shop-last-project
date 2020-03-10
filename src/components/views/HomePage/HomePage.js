@@ -40,7 +40,7 @@ class HomePage extends Component {
     }
 
     if(products.length === 0 && !isLoading) {
-      return <h3>No products found! Please try again later!</h3>
+      return <h3 className={styles.noProducts}>No products found! Please try again later!</h3>
     }
 
     return (
