@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Product from '../../common/Product/Product';
 import Loader from '../../common/Loader/Loader';
-
+import MessageWithLink from '../../common/MessageWithLink/MessageWithLink';
 import PropTypes from 'prop-types';
 import styles from './ProductView.module.scss';
 
@@ -72,7 +72,12 @@ class ProductView extends Component {
 
     if(!product) {
       return ( 
-        <p>Product not found!</p>
+        <div className={styles.notFound}>
+          <h2>Product not found!</h2>
+          <MessageWithLink 
+            message="Problems with server or incorrect page! Please return to the shop page."
+          />
+        </div>
       );
     }
 
