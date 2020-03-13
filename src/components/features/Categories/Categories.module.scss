@@ -1,0 +1,64 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.root {
+
+  .categories {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    overflow: auto;
+    transform: translateX(-200%);
+    background-color: #222;
+    transition: .4s;
+
+    .title {
+      margin: 15px 0;
+      text-align: center;
+      font-weight: 300;
+    }
+  }
+
+  &.active {
+    .categories {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .list {
+    @include flex();
+    width: 150px;
+    list-style: none;
+    margin: 15px auto;
+
+    &__item {
+      @include flex();
+      width: 100px;
+      margin: 10px 20px 0 0;
+    }
+
+    .label {
+      margin-left: 8px;
+      padding-bottom: 4px;
+      cursor: pointer;
+    }
+
+    .checkbox {
+      cursor: pointer;
+    }
+  }
+
+  @media (max-height: 500px) {
+    .categories {
+      width: 350px;
+    }
+
+    .list {
+      width: 240px;
+    }
+  }
+}

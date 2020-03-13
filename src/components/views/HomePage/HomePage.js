@@ -4,8 +4,11 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import ProductCart from '../../common/ProductCart/ProductCart';
 import Pagination from '../../features/Pagination/Pagination.container';
 import Loader from '../../common/Loader/Loader';
+import Categories from '../../features/Categories/Categories';
 import SearchProducts from '../../features/SearchProducts/SearchProducts.container';
 import PropTypes from 'prop-types';
+import { categories } from '../../../config/categories';
+import { areBasicArraysEqual } from '../../../utils/compareArray';
 
 import styles from './HomePage.module.scss';
 
@@ -22,21 +25,29 @@ class HomePage extends Component {
 
   componentDidUpdate(prevProps) {
     if(this.props.page !== prevProps.page ||
-      this.props.searchText !== prevProps.searchText) {
+      this.props.searchText !== prevProps.searchText || 
+      !areBasicArraysEqual(this.props.activeCategories, prevProps.activeCategories)) {
       this.fetchData();
     }
   }
 
   fetchData = () => {
-    const { page, maxProdsOnPage, searchText } = this.props;
+    const { page, maxProdsOnPage, searchText, activeCategories } = this.props;
     const limit = maxProdsOnPage;
     const skip = (page - 1) * maxProdsOnPage;
-    this.props.fetchProducts({ limit, skip, search: searchText });
+    this.props.fetchProducts({ limit, skip, search: searchText, categories: activeCategories });
   }
 
-  openFiltersHandler = () => {
+  openFilters = () => {
     this.setState({
       isFiltersOpen: true,
+    });
+  }
+
+
+  closeFilters = () => {
+    this.setState({
+      isFiltersOpen: false,
     });
   }
 
@@ -71,7 +82,9 @@ class HomePage extends Component {
   }
 
   render() { 
-    const { renderProducts } = this;
+    const { renderProducts, openFilters, closeFilters } = this;
+    const { isFiltersOpen } = this.state;
+    const { activeCategories, toggleCategory, isLoading } = this.props;
 
     return ( 
       <div className={styles.root}>
@@ -83,6 +96,7 @@ class HomePage extends Component {
             <div className={styles.filters__item}>
               <button
                 className={styles.filter}
+                onClick={openFilters}
               >
                 <FontAwesomeIcon
                   className={styles.filter__icon}
@@ -93,7 +107,21 @@ class HomePage extends Component {
           </div>
           <Pagination />
         </div>
+        { 
+        activeCategories.length > 0 &&
+            <div className={styles.categories}>
+              <p>categories:  <i className={styles.list}>{activeCategories.join(', ')}</i></p>
+            </div>
+        }
         {renderProducts()}
+        <Categories 
+          allCategories={categories}
+          isActive={isFiltersOpen}
+          close={closeFilters}
+          activeCategories={activeCategories}
+          toggleCategory={toggleCategory}
+          isLoading={isLoading}
+        />
       </div>
      );
   }
@@ -105,6 +133,9 @@ HomePage.propTypes = {
   page: PropTypes.number,
   allProdsAmount: PropTypes.number,
   changePage: PropTypes.func,
+  activeCategories: PropTypes.array,
+  addCategory: PropTypes.func,
+  removeCategory: PropTypes.func,
 };
 
 HomePage.defaultProps = {

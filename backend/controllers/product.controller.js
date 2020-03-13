@@ -25,6 +25,13 @@ const getProducts = async (req, res) => {
       $regex: regexText,
     }
   }
+
+  if(req.query.categories) {
+    const categories = req.query.categories.split('_');
+    match.categories = {
+      $in: categories,
+    }
+  }
  
 
   try {

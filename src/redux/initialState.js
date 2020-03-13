@@ -10,6 +10,7 @@ const initialState = {
   queries: {
     page: 1,
     searchText: '',
+    categories: [],
   },
   currentProduct: {
     data: null,
