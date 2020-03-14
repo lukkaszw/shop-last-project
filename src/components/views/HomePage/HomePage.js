@@ -52,7 +52,7 @@ class HomePage extends Component {
   }
 
   renderProducts = () => {
-    const { products, isLoading } = this.props;
+    const { products, isLoading, error } = this.props;
     if(isLoading) {
       return (
         <div className={styles.loader}>
@@ -61,8 +61,14 @@ class HomePage extends Component {
       )
     }
 
+    if(error) {
+      return (
+        <h3 className={styles.noProducts}>No products found! Please <span className={styles.offline}>check your connection</span> and try again later!</h3>
+      );
+    }
+
     if(products.length === 0 && !isLoading) {
-      return <h3 className={styles.noProducts}>No products found! Please try again later!</h3>
+      return <h3 className={styles.noProducts}>No products found!</h3>
     }
 
     return (

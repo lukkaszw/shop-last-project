@@ -6,7 +6,7 @@ import { getPage, changePage, goPrevPage, goNextPage } from '../../../redux/quer
 
 const mapStateToProps = (state) => ({
   page: getPage(state),
-  maxPageNr: Math.ceil(getAllDocsAmount(state) / maxProdsOnPage),
+  maxPageNr: Math.ceil(getAllDocsAmount(state) / maxProdsOnPage) || 0,
   isLoading: getIsLoading(state),
 });
 

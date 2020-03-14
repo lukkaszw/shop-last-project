@@ -49,7 +49,6 @@ const queriesProductsReducer = (statePart = [], action = {}) => {
       }
     }
     case TOGGLE_CATEGORY: {
-      console.log(action.payload);
       const category = action.payload;
       let newCategories = [...statePart.categories];
       if(newCategories.includes(category)) {

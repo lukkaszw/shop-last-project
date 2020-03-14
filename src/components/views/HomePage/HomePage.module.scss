@@ -8,6 +8,10 @@
     @include flex(space-between);
   }
 
+  .offline {
+    color: $offline-cl;
+  }
+
   .noProducts {
     padding: 30px 0;
   }

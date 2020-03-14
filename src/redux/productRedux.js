@@ -5,6 +5,7 @@ import api from '../config/api';
 export const getProducts = ({ products }) => products.data;
 export const getAllDocsAmount = ({ products }) => products.allDocsAmount;
 export const getIsLoading = ({ products }) => products.loading.active;
+export const getError = ({ products }) => products.loading.error;
 
 /* action name creator */
 const reducerName = 'products';
@@ -23,7 +24,6 @@ export const fetchError = payload => ({ payload, type: FETCH_ERROR });
 export const fetchProducts = ( query = { limit: undefined, skip: 0, search: '', categories: [] }) => {
   const { limit, skip, search, categories } = query;
   const categoriesString = categories.join('_');
-  console.log(categoriesString);
   return async (dispatch) => {
     dispatch(fetchStarted());
     try {
@@ -74,7 +74,7 @@ const productReducer = (statePart = [], action = {}) => {
         ...statePart,
         loading: {
           active: false,
-          error: action.payload,
+          error: true,
         },
       };
     }
