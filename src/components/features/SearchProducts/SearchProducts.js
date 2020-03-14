@@ -38,11 +38,13 @@ class SearchProducts extends Component {
           className={styles.input} 
           type="text"
           value={searchText}
+          aria-label="Search product"
           onChange={this.onSearchTextHandler}
           placeholder="Search by title"
         />
         <button
           className={styles.btn}
+          aria-label="Input title"
           type="submit"
         >
           <FontAwesomeIcon icon={faSearch} />

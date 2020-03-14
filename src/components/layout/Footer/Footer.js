@@ -48,11 +48,13 @@ const Footer = () => {
             <form className={styles.newsletter}>
               <input 
                 className={styles.newsletter__input} 
+                aria-label="Input email for newsletter"
                 type="email" 
                 placeholder="Your email address"
               />
               <button 
                 className={styles.newsletter__btn}
+                aria-label="Add newsletter"
                 type="submit"
               >
                 <FontAwesomeIcon icon={faCheck} />
@@ -64,6 +66,7 @@ const Footer = () => {
             <div className={styles.social}>
               <a 
                 className={clsx([styles.social__icon, styles.social__facebook])} 
+                aria-label="Go to facebook"
                 href="https://facebook.com"
                 target="__blank"
               >
@@ -71,6 +74,7 @@ const Footer = () => {
               </a>
               <a 
                 className={clsx([styles.social__icon, styles.social__youtube])} 
+                aria-label="Go to youtube"
                 href="https://youtube.com"
                 target="__blank"
               >
@@ -78,6 +82,7 @@ const Footer = () => {
               </a>
               <a 
                 className={clsx([styles.social__icon, styles.social__twitter])} 
+                aria-label="Go to twitter"
                 href="https:/twitter.com"
                 target="__blank"
               >

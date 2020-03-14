@@ -102,6 +102,7 @@ class HomePage extends Component {
             <div className={styles.filters__item}>
               <button
                 className={styles.filter}
+                aria-label="Filter by categories"
                 onClick={openFilters}
               >
                 <FontAwesomeIcon
