@@ -45,7 +45,7 @@ const orderSchema = new mongoose.Schema({
       type: String,
       required: true,
       validate: {
-        validator: (v) => /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/.test(v),
+        validator: (v) => /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/.test(v),
         message: (props) => `${props.value} is not a valid phone number!`,
       },
     },

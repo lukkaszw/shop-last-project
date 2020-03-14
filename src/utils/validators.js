@@ -1,12 +1,12 @@
 import validator from 'validator';
 
-const allowedCountries = ['poland', 'polska'];
 
 export const validators = {
+  // name: value => true,
   name: value => /([a-zA-Z]+\s?\b){2,}/.test(value),
   email: value => validator.isEmail(value),
-  phone: value => /(?<!\w)(\(?(\+|00)?48\)?)?[ -]?\d{3}[ -]?\d{3}[ -]?\d{3}(?!\w)/.test(value),
-  country: value => allowedCountries.includes(value.trim().toLowerCase()),
+  phone: value => /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/.test(value),
+  country: value => value.length > 2,
   address: value => {
     const splittedValue = value.trim().split(' ');
     let maybeValid = false;
