@@ -1,6 +1,6 @@
 import {combineReducers, createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
-import { composeWithDevTools, composeEnhancers } from 'redux-devtools-extension';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import initialState from './initialState';
 
@@ -26,7 +26,7 @@ Object.keys(initialState).forEach(item => {
 });
 
 const combinedReducers = combineReducers(reducers);
-const additionalMiddlewares = process.env.NODE_ENV === 'production' ? composeEnhancers(applyMiddleware(thunk)) : composeWithDevTools(applyMiddleware(thunk));
+const additionalMiddlewares = process.env.NODE_ENV === 'production' ? applyMiddleware(thunk) : composeWithDevTools(applyMiddleware(thunk));
 
 export const store = createStore(
   combinedReducers,
