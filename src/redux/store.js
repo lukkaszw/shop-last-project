@@ -26,11 +26,10 @@ Object.keys(initialState).forEach(item => {
 });
 
 const combinedReducers = combineReducers(reducers);
+const composeEnhancers = process.env.NODE_ENV === 'production' ? applyMiddleware(thunk) : composeWithDevTools(applyMiddleware(thunk));
 
 export const store = createStore(
   combinedReducers,
   initialState,
-  composeWithDevTools(
-    applyMiddleware(thunk)
-  )
+  composeEnhancers,
 );
