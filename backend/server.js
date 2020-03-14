@@ -16,6 +16,10 @@ app.use(express.static(path.join(__dirname, '..', 'build')));
 app.use('/api/products', productsRouter);
 app.use('/api/orders', ordersRouter);
 
+app.get('*', (req, res) => {                       
+  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));                               
+});
+
 const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
