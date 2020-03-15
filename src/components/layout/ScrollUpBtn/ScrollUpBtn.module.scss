@@ -1,0 +1,49 @@
+@import '../../../styles/variables.scss';
+
+.root {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-color: $scroll-btn-cl;
+  border-radius: 45%;
+  transform: translate(50%, 200%);
+  transition: .3s;
+
+  &.active {
+    transform: translate(50%, 50%);
+  }
+
+  .btn {
+    position: absolute;
+    top: 3px;
+    left: 8px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: $btn-font-cl;
+    font-size: 35px;
+
+    cursor: pointer;
+    transition: .2s;
+
+    svg {
+      transition: .2s;
+    }
+
+    &:hover {
+      svg {
+        transform: scale(1.2);
+      }             
+    }
+
+    &:active {
+      svg {
+        transform: scale(1);
+      }
+    }
+  }
+}
