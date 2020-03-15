@@ -7,7 +7,11 @@ const app = express();
 const productsRouter = require('./routes/products.routes');
 const ordersRouter = require('./routes/order.routes');
 
-app.use(cors());
+
+if(process.env.NODE_ENV !== 'production') {
+  app.use(cors());
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
