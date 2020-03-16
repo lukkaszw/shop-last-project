@@ -8,9 +8,9 @@ const productsRouter = require('./routes/products.routes');
 const ordersRouter = require('./routes/order.routes');
 
 
-if(process.env.NODE_ENV !== 'production') {
-  app.use(cors());
-}
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' ? 'https://lukkiasz-shop-store.herokuapp.com' : 'http://localhost:3000',
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
