@@ -80,8 +80,9 @@ const getProduct = async (req, res) => {
 }
 
 const postProduct = async (req, res) => {
+  console.log(req.body);
   const { title, variant, categories, oldPrice, price, amount, description, imageUrl, gallery  } = req.body;
-  
+
   try {
     const product = new Product({
       title,
