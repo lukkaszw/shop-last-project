@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
+const helmet = require('helmet');
 
 const app = express();
 
@@ -11,6 +12,8 @@ const ordersRouter = require('./routes/order.routes');
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' ? 'https://lukkiasz-shop-store.herokuapp.com' : 'http://localhost:3000',
 }));
+
+app.use(helmet());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

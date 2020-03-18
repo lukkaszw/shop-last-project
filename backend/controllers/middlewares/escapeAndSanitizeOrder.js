@@ -2,7 +2,6 @@ const escapeHtmlObject = require('../../utils/escapeHtmlObject');
 const sanitizeObject = require('../../utils/sanitizeObject');
 
 const escapeAndSanitize = (req, res, next) => {
-  console.log(req.body);
   const parsedProducts = req.body.products
     .map(product => escapeHtmlObject(product))
     .map(product => sanitizeObject(product));
