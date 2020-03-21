@@ -1,7 +1,6 @@
 import React from 'react';
-
+import Footer from '../Footer/Footer';
 import Header from '../Header/Header';
-const Footer = React.lazy(() => import('../Footer/Footer'));
 
 const MainLayout = ({ children }) => {
   return ( 
@@ -10,9 +9,7 @@ const MainLayout = ({ children }) => {
         <main className="container main">
           {children}
         </main>
-      <React.Suspense fallback={null}>
         <Footer />
-      </React.Suspense>
     </div>
    );
 }
