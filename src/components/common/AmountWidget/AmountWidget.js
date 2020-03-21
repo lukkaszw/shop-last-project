@@ -11,6 +11,7 @@ const AmountWidget = ({ value, decreaseAction, increaseAction, maxAmount }) => {
     <div className={styles.root}>
       <button
         className={clsx([styles.btn, styles.btn__decrease])}
+        aria-label="Decrease"
         onClick={decreaseAction}
         disabled={value <= 1}
       >
@@ -22,6 +23,7 @@ const AmountWidget = ({ value, decreaseAction, increaseAction, maxAmount }) => {
       </span>
       <button
         className={clsx([styles.btn, styles.btn__increase])}
+        aria-label="Increase"
         onClick={increaseAction}
         disabled={value === maxAmount}
       >
