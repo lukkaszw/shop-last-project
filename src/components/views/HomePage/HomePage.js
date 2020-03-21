@@ -4,13 +4,16 @@ import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import ProductCart from '../../common/ProductCart/ProductCart';
 import Pagination from '../../features/Pagination/Pagination.container';
 import Loader from '../../common/Loader/Loader';
-import Categories from '../../features/Categories/Categories';
+
 import SearchProducts from '../../features/SearchProducts/SearchProducts.container';
 import PropTypes from 'prop-types';
 import { categories } from '../../../config/categories';
 import { areBasicArraysEqual } from '../../../utils/compareArray';
 
 import styles from './HomePage.module.scss';
+
+const Categories = React.lazy(() => import('../../features/Categories/Categories'));
+const ScrollUpBtn = React.lazy(() => import('../../layout/ScrollUpBtn/ScrollUpBtn'));
 
 class HomePage extends Component {
   state= {
@@ -121,14 +124,19 @@ class HomePage extends Component {
             </div>
         }
         {renderProducts()}
-        <Categories 
-          allCategories={categories}
-          isActive={isFiltersOpen}
-          close={closeFilters}
-          activeCategories={activeCategories}
-          toggleCategory={toggleCategory}
-          isLoading={isLoading}
-        />
+        <React.Suspense fallback={null}>
+          <Categories 
+            allCategories={categories}
+            isActive={isFiltersOpen}
+            close={closeFilters}
+            activeCategories={activeCategories}
+            toggleCategory={toggleCategory}
+            isLoading={isLoading}
+          />
+        </React.Suspense>
+        <React.Suspense fallback={null}>
+          <ScrollUpBtn />
+        </React.Suspense>
       </div>
      );
   }

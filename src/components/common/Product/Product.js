@@ -6,9 +6,12 @@ import {
   getCategory,
 } from '../../../utils/specification';
 import AmountWidget from '../AmountWidget/AmountWidget';
-import Gallery from '../Gallery/Gallery';
+import Spinner from '../../common/Spinner/Spinner';
 
 import getDiscountPercent from '../../../utils/getDiscountPercent';
+
+const Gallery = React.lazy(() => import('../Gallery/Gallery'));
+
 
 const Product  = ({ 
   _id, 
@@ -104,9 +107,11 @@ const Product  = ({
             </form>
         </div>
       </div>
-      <Gallery 
-        gallery={gallery}
-      />
+      <React.Suspense fallback={<Spinner />}>
+        <Gallery 
+          gallery={gallery}
+        />
+      </React.Suspense>
     </article>
    );
 }

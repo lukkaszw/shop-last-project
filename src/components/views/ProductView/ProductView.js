@@ -83,12 +83,12 @@ class ProductView extends Component {
 
     return (
       <Product 
-      {...product} 
-      chosenAmount={chosenAmount}
-      decreaseAmount={decreaseAmountHandler}
-      increaseAmount={increaseAmountHandler}
-      addToCart={addToCartHandler}
-    />
+        {...product} 
+        chosenAmount={chosenAmount}
+        decreaseAmount={decreaseAmountHandler}
+        increaseAmount={increaseAmountHandler}
+        addToCart={addToCartHandler}
+      />
     );
   }
 
