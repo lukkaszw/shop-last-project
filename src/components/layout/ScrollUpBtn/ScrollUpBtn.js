@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretUp  } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 
 import styles  from './ScrollUpBtn.module.scss';
 
-class ScrollUpBtn extends Component {
+class ScrollUpBtn extends PureComponent {
   state = {
     isShown: false,
   }

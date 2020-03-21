@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
-import ProductCart from '../../common/ProductCart/ProductCart';
+import FilterBtn from '../../features/FilterBtn/FilterBtn';
+import ProductList from '../../features/ProductList/ProductList';
 import Pagination from '../../features/Pagination/Pagination.container';
-import Loader from '../../common/Loader/Loader';
 import Categories from '../../features/Categories/Categories';
 import SearchProducts from '../../features/SearchProducts/SearchProducts.container';
+import ScrollUpBtn from '../../layout/ScrollUpBtn/ScrollUpBtn';
 import PropTypes from 'prop-types';
 import { categories } from '../../../config/categories';
 import { areBasicArraysEqual } from '../../../utils/compareArray';
 
 import styles from './HomePage.module.scss';
-
-const ScrollUpBtn = React.lazy(() => import('../../layout/ScrollUpBtn/ScrollUpBtn'));
 
 class HomePage extends Component {
   state= {
@@ -53,46 +50,10 @@ class HomePage extends Component {
     });
   }
 
-  renderProducts = () => {
-    const { products, isLoading, error } = this.props;
-    if(isLoading) {
-      return (
-        <div className={styles.loader}>
-          <Loader />
-        </div>
-      )
-    }
-
-    if(error) {
-      return (
-        <h3 className={styles.noProducts}>No products found! Please <span className={styles.offline}>check your connection</span> and try again later!</h3>
-      );
-    }
-
-    if(products.length === 0 && !isLoading) {
-      return <h3 className={styles.noProducts}>No products found!</h3>
-    }
-
-    return (
-      <section className={styles.products}>
-      {
-        products.map(product => (
-          <div 
-            key={product._id}
-            className={styles.product}
-          >
-            <ProductCart {...product} />
-          </div>
-        ))
-      }
-      </section>
-    )
-  }
-
   render() { 
-    const { renderProducts, openFilters, closeFilters } = this;
+    const { openFilters, closeFilters } = this;
     const { isFiltersOpen } = this.state;
-    const { activeCategories, toggleCategory, isLoading } = this.props;
+    const { activeCategories, toggleCategory, isLoading, products, error } = this.props;
 
     return ( 
       <div className={styles.root}>
@@ -102,27 +63,24 @@ class HomePage extends Component {
               <SearchProducts />
             </div>
             <div className={styles.filters__item}>
-              <button
-                className={styles.filter}
-                aria-label="Filter by categories"
-                onClick={openFilters}
-              >
-                <FontAwesomeIcon
-                  className={styles.filter__icon}
-                  icon={faFilter} 
-                />
-              </button>
+              <FilterBtn 
+                openFilters={openFilters}
+              />
             </div>
           </div>
           <Pagination />
         </div>
         { 
-        activeCategories.length > 0 &&
+          activeCategories.length > 0 &&
             <div className={styles.categories}>
               <p>categories:  <i className={styles.list}>{activeCategories.join(', ')}</i></p>
             </div>
         }
-        {renderProducts()}
+        <ProductList 
+          products={products}
+          isLoading={isLoading}
+          error={error}
+        />
         <Categories 
           allCategories={categories}
           isActive={isFiltersOpen}
@@ -131,9 +89,7 @@ class HomePage extends Component {
           toggleCategory={toggleCategory}
           isLoading={isLoading}
         />
-        <React.Suspense fallback={null}>
-          <ScrollUpBtn />
-        </React.Suspense>
+        <ScrollUpBtn />
       </div>
      );
   }
@@ -142,6 +98,8 @@ class HomePage extends Component {
 HomePage.propTypes = {
   products: PropTypes.array,
   fetchProducts: PropTypes.func,
+  isLoading: PropTypes.bool,
+  error: PropTypes.bool,
   page: PropTypes.number,
   allProdsAmount: PropTypes.number,
   changePage: PropTypes.func,

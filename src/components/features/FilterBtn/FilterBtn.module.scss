@@ -1,0 +1,43 @@
+@import '../../../styles/variables.scss';
+
+.root {
+  position: relative;
+  padding: 2px 10px 0 10px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: transparent;
+  color: $btn-filter-cl;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  svg {
+    transition: .2s;
+  }
+
+  &::before {
+    transform: scale(1);
+    content: 'filter';
+    display: block;
+    position: absolute;
+    top: -11px;
+    left: 8px;
+    font-size: 10px;
+    font-weight: 200;
+    letter-spacing: 2px;
+    color: $btn-font-cl;
+  }
+
+  &:hover {
+    
+    svg {
+      transform: scale(1.2);
+    }
+  }
+
+  &:active {
+    svg {
+      transform: scale(1);
+    }
+  }
+}

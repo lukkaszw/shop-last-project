@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './Categories.module.scss';
 import clsx from 'clsx';
 
-const Categories = ({ allCategories, activeCategories, isActive, toggleCategory, close, isLoading }) => {
+const Categories = React.memo(function Categories ({ allCategories, activeCategories, isActive, toggleCategory, close, isLoading }) {
   return ( 
     <div className={clsx([styles.root, isActive && styles.active])}>
       {
@@ -45,7 +45,7 @@ const Categories = ({ allCategories, activeCategories, isActive, toggleCategory,
     </div>
 
    );
-}
+});
 
 Categories.propTypes = {
   allCategories: PropTypes.array,
