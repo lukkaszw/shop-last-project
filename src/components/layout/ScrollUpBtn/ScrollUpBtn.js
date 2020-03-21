@@ -12,7 +12,12 @@ class ScrollUpBtn extends Component {
 
   componentDidMount() {
     this.checkPosition()
-    window.addEventListener('scroll', () => this.checkPosition())
+    window.addEventListener('scroll', this.checkPosition);
+  }
+
+  
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.checkPosition);
   }
 
   checkPosition = () => {
@@ -43,6 +48,7 @@ class ScrollUpBtn extends Component {
       behavior: 'smooth',
     });
   }
+
 
 
   render() {
