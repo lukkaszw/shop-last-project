@@ -7,7 +7,6 @@ import clsx from 'clsx';
 
 import styles from './PhotoModal.module.scss';
 
-
 const PhotoModal = ({ 
   photoUrl, 
   nextAction, 

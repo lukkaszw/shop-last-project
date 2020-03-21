@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import Product from '../../common/Product/Product';
 import Loader from '../../common/Loader/Loader';
+import Gallery from '../../common/Gallery/Gallery';
 import MessageWithLink from '../../common/MessageWithLink/MessageWithLink';
 import PropTypes from 'prop-types';
 import styles from './ProductView.module.scss';
 
 class ProductView extends Component {
-  state = { 
-    chosenAmount: 1,
-   }
 
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -19,48 +17,8 @@ class ProductView extends Component {
     }
   }
 
-  increaseAmountHandler = () => {
-    const maxAmount = this.props.product.amount;
-    if(this.setState.chosenAmount >= maxAmount) {
-      return;
-    }
-    this.setState((prevState) => ({
-      chosenAmount: ++prevState.chosenAmount,      
-    }));
-  }
-
-  decreaseAmountHandler = () => {
-    if(this.setState.chosenAmount === 1) {
-      return;
-    }
-    this.setState((prevState) => ({
-      chosenAmount: --prevState.chosenAmount,      
-    }));
-  }
-
-  addToCartHandler = (e) => {
-    e.preventDefault();
-    const { product, addToCart, decreaseProductAmount } = this.props;
-    const amount = this.state.chosenAmount;
-    const productToCart = {
-      _id: product._id,
-      title: product.title,
-      price: product.price,
-      amount,
-      maxAmount: product.amount,
-    }
-
-    addToCart(productToCart);
-    decreaseProductAmount(amount);
-    this.setState({
-      chosenAmount: 0,
-    });
-  }
-
   renderProduct = () => {
-    const { isLoading, product } = this.props;
-    const { decreaseAmountHandler, increaseAmountHandler, addToCartHandler } = this;
-    const { chosenAmount } = this.state;
+    const { isLoading, product, decreaseProductAmount, addToCart } = this.props;
 
     if(isLoading) {
       return (
@@ -82,13 +40,17 @@ class ProductView extends Component {
     }
 
     return (
-      <Product 
-        {...product} 
-        chosenAmount={chosenAmount}
-        decreaseAmount={decreaseAmountHandler}
-        increaseAmount={increaseAmountHandler}
-        addToCart={addToCartHandler}
-      />
+      <>
+        <Product 
+          {...product} 
+          addToCart={addToCart}
+          decreaseProductAmount={decreaseProductAmount}
+        />
+        <Gallery 
+          gallery={product.gallery}
+        />
+      </>
+
     );
   }
 

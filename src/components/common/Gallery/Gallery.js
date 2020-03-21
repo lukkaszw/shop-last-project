@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import PhotoModal from '../PhotoModal/PhotoModal';
 import styles from './Gallery.module.scss';
-
-const PhotoModal = React.lazy(() => import('../PhotoModal/PhotoModal'));
 
 class Gallery extends Component {
   state = { 
@@ -78,16 +76,14 @@ class Gallery extends Component {
         </ul>
         {
           (openPhoto || openPhoto === 0) &&
-            <React.Suspense fallback={null}>
-              <PhotoModal 
-                photoUrl={gallery[openPhoto].img} 
-                nextAction={nextPhotoHandler} 
-                prevAction={prevPhotoHandler}
-                closeAction={closeModalHandler}
-                currentNr={openPhoto + 1}
-                maxNr={gallery.length} 
-              />
-            </React.Suspense>
+            <PhotoModal 
+              photoUrl={gallery[openPhoto].img} 
+              nextAction={nextPhotoHandler} 
+              prevAction={prevPhotoHandler}
+              closeAction={closeModalHandler}
+              currentNr={openPhoto + 1}
+              maxNr={gallery.length} 
+            />
         }
       </div>
      );
