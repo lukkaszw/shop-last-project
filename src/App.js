@@ -13,8 +13,6 @@ import {
   CSSTransition,
 } from 'react-transition-group';
 
-import './styles/global.scss';
-
 function App() {
   return (
     <BrowserRouter>
