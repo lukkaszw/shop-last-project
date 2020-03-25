@@ -11,7 +11,7 @@ const ProductCart = ({ _id, imageUrl, title, price, oldPrice }) => {
   if(oldPrice) {
     oldPriceElement = (
       <span className={styles.oldPrice}>
-        {oldPrice}
+        {oldPrice} zł
       </span>
     );
     const discountPercent = getDiscountPercent(price, oldPrice);

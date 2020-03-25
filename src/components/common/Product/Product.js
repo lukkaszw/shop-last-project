@@ -74,7 +74,7 @@ class Product  extends Component {
     if(oldPrice) {
       oldPriceEl = (
         <span className={styles.oldPrice}>
-          {oldPrice}
+          {oldPrice} zł
         </span>
       );
       const discountPercent = getDiscountPercent(price, oldPrice);
