@@ -53,7 +53,7 @@ class HomePage extends Component {
   render() { 
     const { openFilters, closeFilters } = this;
     const { isFiltersOpen } = this.state;
-    const { activeCategories, toggleCategory, isLoading, products, error } = this.props;
+    const { activeCategories, toggleCategory, isLoading, products, error, searchText } = this.props;
 
     return ( 
       <div className={styles.root}>
@@ -74,6 +74,12 @@ class HomePage extends Component {
           activeCategories.length > 0 &&
             <div className={styles.categories}>
               <p>categories:  <i className={styles.list}>{activeCategories.join(', ')}</i></p>
+            </div>
+        }
+        {
+          searchText.length > 0 &&
+            <div className={styles.categories}>
+              <p>searched in title: <i className={styles.list}>{searchText}</i></p>
             </div>
         }
         <ProductList 
