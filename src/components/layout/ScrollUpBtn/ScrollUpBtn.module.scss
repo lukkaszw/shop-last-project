@@ -9,10 +9,12 @@
   background-color: $scroll-btn-cl;
   border-radius: 45%;
   transform: translate(50%, 200%);
+  opacity: 0;
   transition: .3s;
 
   &.active {
     transform: translate(50%, 50%);
+    opacity: 1;
   }
 
   .btn {
