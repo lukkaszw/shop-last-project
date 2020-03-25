@@ -8,7 +8,7 @@
   padding: 20px;
 
   .categories {
-    @include flex(center, flex-start);
+    @include flex(space-around, flex-start);
 
     h3 {
       text-align: center;
