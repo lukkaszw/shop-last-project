@@ -2,6 +2,8 @@ import React from 'react';
 import Backdrop from '../../common/Backdrop/Backdrop';
 import PropTypes from 'prop-types';
 import styles from './Categories.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLongArrowAltLeft } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 
 const Categories = React.memo(function Categories ({ allCategories, activeCategories, isActive, toggleCategory, close, isLoading }) {
@@ -12,7 +14,7 @@ const Categories = React.memo(function Categories ({ allCategories, activeCatego
         <Backdrop action={close} />
       }
 
-      <form className={styles.categories}>
+      <div className={styles.categories}>
         <h3 className={styles.title}>Filter by categories:</h3>
         <ul className={styles.list}>
           {
@@ -40,8 +42,14 @@ const Categories = React.memo(function Categories ({ allCategories, activeCatego
             ))
           }
         </ul>
-
-      </form>
+        <button 
+          className={styles.closeBtn}
+          aria-label='Close filters'
+          onClick={close}
+        >
+          <FontAwesomeIcon icon={faLongArrowAltLeft} />
+        </button>
+      </div>
     </div>
 
    );
