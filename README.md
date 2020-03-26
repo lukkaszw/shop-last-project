@@ -2,7 +2,7 @@
 
 The project is deployed on heroku: [https://lukkiasz-shop-store.herokuapp.com](https://lukkiasz-shop-store.herokuapp.com).
 
-This is full-stack app, PWA, SPA.<br />
+This is full-stack app, PWA, SPA. This app is not finished yet. Work is in progress.<br />
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).<br />
 Used for front-end: react, react-router, redux.<br />
 Used for back-end: express.js, mongoDB (mongoose) and database on MongoDB Atlas service.
