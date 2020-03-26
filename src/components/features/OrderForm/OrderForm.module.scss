@@ -6,10 +6,12 @@
 
   .regulations {
     margin-top: 10px;
-    @include flex();
+    @include flex(flex-start, flex-start);
+    flex-wrap: nowrap;
     font-size: 14px;
 
     .checkbox {
+      margin-top: 3px;
       margin-right: 10px;
       cursor: pointer;
     }
