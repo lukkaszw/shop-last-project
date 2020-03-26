@@ -36,9 +36,8 @@
     "start": "node ./backend/server.js",
     "dev": "npm-run-all -p dev:*",
     "dev:server": "nodemon ./backend/server.js",
-    "dev:client": "sleep 3 && react-scripts start",
+    "dev:client": "sleep 1 && react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
