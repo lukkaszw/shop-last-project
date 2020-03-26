@@ -24,10 +24,10 @@
 
   .specification {
     display: flex;
+    margin: 5px 0;
 
     .categories {
       min-width: 90px;
-
       &__item {
         padding: 3px 0;
       }
