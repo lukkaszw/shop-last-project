@@ -17,7 +17,7 @@ const CartItem = ({ _id, title, price, amount, maxAmount, note, removeFromCart, 
           <h3>{title}</h3>
         </div>
         <div>
-          <h3>{Math.round((price * amount) * 100) / 100} zł</h3>
+          <h3 className={styles.price}>{Math.round((price * amount) * 100) / 100} zł</h3>
         </div>
       </div>
       <div className={styles.bottom}>

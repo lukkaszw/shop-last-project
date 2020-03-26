@@ -6,8 +6,20 @@
   
   .top {
     @include flex(space-between);
+    flex-wrap: nowrap;
     padding: 5px 0;
     border-bottom: 1px solid $border-cl;
+
+    h3 {
+      font-size: 18px;
+      font-weight: normal;
+    }
+
+    .price {
+      min-width: 80px;
+      margin-left: 5px;
+      text-align: right;
+    }
   }
 
   .bottom {
