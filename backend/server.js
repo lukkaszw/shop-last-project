@@ -11,7 +11,7 @@ const ordersRouter = require('./routes/order.routes');
 
 
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? 'https://lukkiasz-shop-store.herokuapp.com' : 'http://localhost:3000',
+  origin: process.env.NODE_ENV === 'production' ? 'https://lukkiasz-game-store.herokuapp.com' : 'http://localhost:3000',
 }));
 
 app.use(helmet());
