@@ -100,5 +100,9 @@
   .required {
     margin-top: 5px;
     font-size: 12px;
+
+    &.warning {
+      color: $form-error-cl;
+    }
   }
 }

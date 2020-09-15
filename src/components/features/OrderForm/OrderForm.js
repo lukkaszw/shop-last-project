@@ -298,6 +298,12 @@ class OrderForm extends Component {
           </label>
         </div>
         <p className={styles.required}>* - option required</p>
+        <p className={clsx([styles.required, styles.warning])}>
+          Warning!!! This app was created only for development purposes! Personal data from this form won't be stored in any real database and won't be used in the data processing!!! 
+        </p>
+        <p className={clsx([styles.required, styles.warning])}>
+          Uwaga!!! Aplikacja stworzona tylko w celach nauki programowania. Dane osobowe z tego formularza nie będą zapisane w żadnej prawdziwej bazie danych i nie będą użyte w procesie przetwarzania danych osobowych !!!!!
+        </p>
         <div className={styles.submit}>
           <span className={styles.btn}>
             <Link 
